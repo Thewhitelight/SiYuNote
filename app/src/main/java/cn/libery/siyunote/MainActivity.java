@@ -25,7 +25,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.libery.siyunote.ui.AddNoteActivity;
-import cn.libery.siyunote.ui.NotesFragment;
+import cn.libery.siyunote.ui.NoteListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity
     private void setupViewPager(ViewPager viewpager) {
 
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        NotesFragment fragment = NotesFragment.newInstance(Constants.NOTES_ALL);
+        NoteListFragment fragment = NoteListFragment.newInstance(Constants.NOTES_ALL);
         adapter.addFragment(fragment, "全部");
-        fragment = NotesFragment.newInstance(Constants.NOTES_WORK);
+        fragment = NoteListFragment.newInstance(Constants.NOTES_WORK);
         adapter.addFragment(fragment, "工作");
-        fragment = NotesFragment.newInstance(Constants.NOTES_LIFE);
+        fragment = NoteListFragment.newInstance(Constants.NOTES_LIFE);
         adapter.addFragment(fragment, "生活");
         viewpager.setAdapter(adapter);
 

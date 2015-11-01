@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.R;
 
-public class NotesFragment extends Fragment {
+public class NoteListFragment extends Fragment {
 
     private static int NoteTypes;
 
-    public static NotesFragment newInstance(int NoteType) {
-        NotesFragment fragment = new NotesFragment();
+    public static NoteListFragment newInstance(int NoteType) {
+        NoteListFragment fragment = new NoteListFragment();
         Bundle args = new Bundle();
         NoteTypes = NoteType;
         args.putInt(Constants.NOTES_TYPE, NoteType);
@@ -22,7 +22,7 @@ public class NotesFragment extends Fragment {
         return fragment;
     }
 
-    public NotesFragment() {
+    public NoteListFragment() {
         // Required empty public constructor
     }
 
