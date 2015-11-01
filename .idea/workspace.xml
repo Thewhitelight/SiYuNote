@@ -17,22 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\appcompat_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\bolts_android_1_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\butterknife_7_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\core_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\design_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\drawee_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\fbcore_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\fresco_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\gson_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\imagepipeline_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\library_2_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\otto_1_3_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\recyclerview_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\support_annotations_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\support_v4_23_1_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SiYuNote.iws" />
@@ -123,8 +107,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4632353">
-              <caret line="1825" column="0" selection-start-line="1825" selection-start-column="0" selection-end-line="1825" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.11580882">
+              <caret line="1810" column="0" selection-start-line="1810" selection-start-column="0" selection-end-line="1810" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2290,7 +2274,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446360818226</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ignore">
+      <created>1446361882170</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1446361882170</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2378,7 +2368,8 @@
     <MESSAGE value="init addNoteActivity" />
     <MESSAGE value="fix ignore" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2758,8 +2749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4632353">
-          <caret line="1825" column="0" selection-start-line="1825" selection-start-column="0" selection-end-line="1825" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.11580882">
+          <caret line="1810" column="0" selection-start-line="1810" selection-start-column="0" selection-end-line="1810" selection-end-column="0" />
           <folding />
         </state>
       </provider>
