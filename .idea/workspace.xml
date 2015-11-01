@@ -2292,7 +2292,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446360001998</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix">
+      <created>1446360009082</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1446360009082</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2379,7 +2385,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="init addNoteActivity" />
     <MESSAGE value="fix ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix ignore" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
