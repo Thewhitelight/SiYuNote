@@ -2280,7 +2280,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446361882170</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ignore workspace">
+      <created>1446361906827</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1446361906827</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2369,7 +2375,8 @@
     <MESSAGE value="fix ignore" />
     <MESSAGE value="fix" />
     <MESSAGE value="ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
+    <MESSAGE value="ignore workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
