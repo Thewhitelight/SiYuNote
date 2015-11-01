@@ -110,8 +110,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="55.504604">
-              <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
+            <state vertical-scroll-proportion="55.543278">
+              <caret line="1813" column="0" selection-start-line="1813" selection-start-column="0" selection-end-line="1813" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2271,7 +2271,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446360802414</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix">
+      <created>1446360818226</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1446360818226</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2662,8 +2668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="55.504604">
-          <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
+        <state vertical-scroll-proportion="55.543278">
+          <caret line="1813" column="0" selection-start-line="1813" selection-start-column="0" selection-end-line="1813" selection-end-column="0" />
           <folding />
         </state>
       </provider>
