@@ -17,7 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SiYuNote.iws" />
@@ -2287,7 +2286,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446359854836</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix ignore">
+      <created>1446360001998</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446360001998</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2373,7 +2378,8 @@
     <MESSAGE value="init fresco" />
     <MESSAGE value="init" />
     <MESSAGE value="init addNoteActivity" />
-    <option name="LAST_COMMIT_MESSAGE" value="init addNoteActivity" />
+    <MESSAGE value="fix ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
