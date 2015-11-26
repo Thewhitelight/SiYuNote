@@ -14,7 +14,7 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +23,7 @@
         </activity>
         <activity
             android:name=".ui.AddNoteActivity"
-            android:label="@string/title_activity_add"
-            android:theme="@style/AppTheme" />
+            android:label="@string/title_activity_add" />
     </application>
 
 </manifest>

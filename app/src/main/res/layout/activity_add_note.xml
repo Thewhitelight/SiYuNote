@@ -29,8 +29,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:paddingBottom="6dp"
-            android:paddingTop="6dp"
-            android:text="168" />
+            android:paddingTop="6dp" />
     </RelativeLayout>
 
     <ScrollView
@@ -46,11 +45,13 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/edt_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:gravity="top"
-                android:hint="记录点什么吧" />
+                android:hint="记录点什么吧"
+                android:inputType="none" />
 
         </LinearLayout>
     </ScrollView>
