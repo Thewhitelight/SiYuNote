@@ -17,25 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\appcompat_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\bolts_android_1_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\butterknife_7_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\core_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\design_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\drawee_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\fbcore_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\fresco_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\gson_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\imagepipeline_0_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\library_2_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\otto_1_3_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\recyclerview_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\support_annotations_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\.idea\libraries\support_v4_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\SiYuNote\app\app.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiYuNote.iml" afterPath="$PROJECT_DIR$/SiYuNote.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SiYuNote.iws" />
@@ -1545,7 +1526,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448803867962</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <created>1448803976075</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1448803976075</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
