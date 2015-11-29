@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class PhotoOperate {
@@ -26,7 +27,7 @@ public class PhotoOperate {
     private File getTempFile(Context context) {
         File file = null;
         try {
-            String fileName = "IMG_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            String fileName = "IMG_" + new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
             file = File.createTempFile(fileName, ".jpg", context.getCacheDir());
         } catch (IOException e) {
             e.printStackTrace();

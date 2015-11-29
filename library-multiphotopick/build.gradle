@@ -21,6 +21,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile "com.android.support:design:23.1.1"// 23.1.0 has bug
+    compile "com.android.support:design:23.1.1"
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
 }

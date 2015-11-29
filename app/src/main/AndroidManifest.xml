@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.libery.siyunote">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -27,9 +29,18 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="cn.libery.library_multiphotopick.photopick.PhotoPickActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_MultiPhotoPick">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="cn.libery.library_multiphotopick.photopick.PhotoPickDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_MultiPhotoPick" />
+        <activity
+            android:name=".ui.ViewPagerActivity"
             android:screenOrientation="portrait" />
     </application>
 

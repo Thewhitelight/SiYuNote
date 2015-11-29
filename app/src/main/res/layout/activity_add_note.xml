@@ -19,8 +19,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:paddingBottom="6dp"
-            android:paddingTop="6dp"
-            android:text="2015年11月10日 星期二" />
+            android:paddingTop="6dp" />
 
         <TextView
             android:id="@+id/tv_num"
@@ -48,7 +47,8 @@
             <cn.libery.siyunote.widget.MultiPhotoPickView
                 android:id="@+id/photo_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/edt_input"
@@ -72,9 +72,11 @@
         android:paddingBottom="6dp">
 
         <ImageView
+            android:id="@+id/add_md"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_text" />
 
         <ImageView
@@ -82,6 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_picture" />
 
         <ImageView
@@ -89,6 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_voice" />
 
     </LinearLayout>
