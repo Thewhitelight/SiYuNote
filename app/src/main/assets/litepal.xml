@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="SiYuNote" />
+
+    <version value="1" />
+
+    <list>
+        <mapping class="cn.libery.siyunote.db.UserRecord" />
+    </list>
+</litepal>
