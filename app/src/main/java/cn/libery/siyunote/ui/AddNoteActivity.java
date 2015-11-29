@@ -14,6 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.utils.TimeUtils;
+import cn.libery.siyunote.widget.MultiPhotoPickView;
 
 public class AddNoteActivity extends BaseActivity {
 
@@ -25,6 +26,8 @@ public class AddNoteActivity extends BaseActivity {
     TextView tvNum;
     @Bind(R.id.edt_input)
     EditText edtInput;
+    @Bind(R.id.photo_view)
+    MultiPhotoPickView photoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +56,10 @@ public class AddNoteActivity extends BaseActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                tvNum.setText(size.length()+"");
+                tvNum.setText(size.length() + "");
             }
         });
+        //photoView.setImages();
     }
 
 }

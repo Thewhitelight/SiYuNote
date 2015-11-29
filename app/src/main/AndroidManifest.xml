@@ -23,7 +23,14 @@
         </activity>
         <activity
             android:name=".ui.AddNoteActivity"
-            android:label="@string/title_activity_add" />
+            android:label="@string/title_activity_add"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.libery.library_multiphotopick.photopick.PhotoPickActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.libery.library_multiphotopick.photopick.PhotoPickDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

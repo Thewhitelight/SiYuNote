@@ -10,10 +10,6 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
-/**
- * Created by cc191954 on 14-8-23.
- * 放一些公共的全局方法
- */
 public class Global {
 
     public static boolean isGif(String uri) {

@@ -14,9 +14,7 @@ import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by chaochen on 14-9-22.
- */
+
 public class PhotoOperate {
 
     private Context context;

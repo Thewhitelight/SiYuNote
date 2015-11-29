@@ -75,6 +75,7 @@ public class FolderAdapter extends BaseAdapter {
         if (count > 0) {
             ImageLoader.getInstance().displayImage(ImageInfo.pathAddPreFix(uri), holder.foldIcon,
                     PhotoPickActivity.optionsImage);
+
         }
         if (data.getmName().equals(mSelect)) {
             holder.check.setVisibility(View.VISIBLE);

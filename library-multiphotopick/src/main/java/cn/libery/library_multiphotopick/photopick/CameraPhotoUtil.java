@@ -7,11 +7,12 @@ import android.util.Log;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class CameraPhotoUtil {
     public static Uri getOutputMediaFileUri() {
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                ,"Date");
+                , "Date");
         if (!mediaStorageDir.exists()) {
             if (!mediaStorageDir.mkdirs()) {
                 Log.d("Date", "failed to create directory");
@@ -19,7 +20,7 @@ public class CameraPhotoUtil {
             }
         }
 
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
         File mediaFile = new File(mediaStorageDir.getPath() + File.separator + "IMG_" + timeStamp
                 + ".jpg");
 

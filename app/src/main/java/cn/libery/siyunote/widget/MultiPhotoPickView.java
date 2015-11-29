@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 
 import cn.libery.siyunote.R;
-import cn.libery.siyunote.utils.PixelUtils;
+import cn.libery.siyunote.utils.ImageLoaderOptions;
 
 /**
  * Created by Libery on 2015/11/10.
@@ -31,31 +33,23 @@ public class MultiPhotoPickView extends LinearLayout {
     }
 
     private void init(Context context) {
-        LayoutInflater.from(context).inflate(R.layout.layout_multi_photo_view, null);
+        LayoutInflater.from(context).inflate(R.layout.layout_multi_photo_view, this);
         image1 = (ImageView) findViewById(R.id.img_1);
         image2 = (ImageView) findViewById(R.id.img_2);
         image3 = (ImageView) findViewById(R.id.img_3);
         image4 = (ImageView) findViewById(R.id.img_4);
         image5 = (ImageView) findViewById(R.id.img_5);
         image6 = (ImageView) findViewById(R.id.img_6);
-        int with = PixelUtils.getWith();
-        LayoutParams params = new LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        int margin = PixelUtils.px2dp(30);
-        params.height = PixelUtils.px2dp(50);
-        params.width = with / 3;
-        params.setMargins(margin, margin, margin, margin);
-        image1.setLayoutParams(params);
-        image2.setLayoutParams(params);
-        image3.setLayoutParams(params);
-        image4.setLayoutParams(params);
-        image5.setLayoutParams(params);
-        image6.setLayoutParams(params);
     }
 
     public void setImages(ArrayList<String> images) {
         ImageView[] imageViews = {image1, image2, image3, image4, image5, image6};
-        for (int i = 0; i < images.size(); i++) {
-
+        int size = images.size();
+        for (int i = 0; i < size; i++) {
+            ImageLoader.getInstance().displayImage(images.get(i), imageViews[i], ImageLoaderOptions.getOptions());
+        }
+        if (size < 6) {
+            imageViews[size + 1].setBackgroundResource(R.drawable.bg_img_add);
         }
     }
 
