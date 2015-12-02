@@ -1,10 +1,13 @@
 package cn.libery.siyunote.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -25,6 +28,7 @@ import cn.libery.library_multiphotopick.photopick.PhotoOperate;
 import cn.libery.library_multiphotopick.photopick.PhotoPickActivity;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.R;
+import cn.libery.siyunote.db.EventRecord;
 import cn.libery.siyunote.model.wrapper.PhotoPickWrapper;
 import cn.libery.siyunote.utils.TimeUtils;
 import cn.libery.siyunote.widget.MultiPhotoPickView;
@@ -134,7 +138,11 @@ public class AddNoteActivity extends BaseActivity {
                 }
                 if (mPhotoPickWrapperList.size() > 0) {
                     photoView.setVisibility(View.VISIBLE);
-                    photoView.setImages(mPhotoPickWrapperList);
+                    ArrayList<String> imgUrls = new ArrayList<>();
+                    for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
+                        imgUrls.add(wrapper.getUriString());
+                    }
+                    photoView.setImages(imgUrls);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -142,4 +150,39 @@ public class AddNoteActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+        if (!TextUtils.isEmpty(edtInput.getText()) || mPhotoPickWrapperList.size() > 0) {
+            new AlertDialog.Builder(this)
+                    .setTitle("笔记")
+                    .setMessage("舍弃本次记录?")
+                    .setPositiveButton("保存", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            EventRecord record = new EventRecord();
+                            record.setTime(tvTime.getText().toString());
+                            record.setContent(edtInput.getText().toString());
+                            record.setTimeStamp(Calendar.getInstance().getTimeInMillis());
+                            String imgUrls = "";
+                            for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
+                                imgUrls += wrapper.getUriString() + ",";
+                            }
+                            record.setPictures(imgUrls);
+                            record.save();
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("不保存", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
+        } else {
+            super.onBackPressed();
+        }
+
+    }
 }

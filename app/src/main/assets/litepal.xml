@@ -7,4 +7,7 @@
     <list>
         <mapping class="cn.libery.siyunote.db.UserRecord" />
     </list>
+    <list>
+        <mapping class="cn.libery.siyunote.db.EventRecord" />
+    </list>
 </litepal>
