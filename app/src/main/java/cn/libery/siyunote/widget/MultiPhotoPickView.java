@@ -13,7 +13,6 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.libery.siyunote.R;
-import cn.libery.siyunote.model.wrapper.PhotoPickWrapper;
 import cn.libery.siyunote.utils.ImageLoaderOptions;
 
 /**
@@ -51,7 +50,7 @@ public class MultiPhotoPickView extends LinearLayout {
         ButterKnife.bind(this);
     }
 
-    public void setImages(List<PhotoPickWrapper> images) {
+    public void setImages(List<String> images) {
         ImageView[] imageViews = {img1, img2, img3, img4, img5, img6};
         int size = images.size();
         for (ImageView image : imageViews) {
@@ -59,7 +58,7 @@ public class MultiPhotoPickView extends LinearLayout {
         }
         for (int i = 0; i < size; i++) {
             imageViews[i].setVisibility(VISIBLE);
-            ImageLoader.getInstance().displayImage(images.get(i).getUriString(), imageViews[i], ImageLoaderOptions.getOptions());
+            ImageLoader.getInstance().displayImage(images.get(i), imageViews[i], ImageLoaderOptions.getOptions());
         }
     }
 
