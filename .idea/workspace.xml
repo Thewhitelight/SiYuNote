@@ -17,7 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SiYuNote.iws" />
@@ -93,12 +92,12 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
               <folding>
-                <marker date="1449068185262" expanded="true" signature="238817:238834" placeholder="..." />
-                <marker date="1449068185262" expanded="true" signature="238817:238852" placeholder="..." />
-                <marker date="1449068185262" expanded="true" signature="238817:238865" placeholder="..." />
-                <marker date="1449068185262" expanded="true" signature="238817:238880" placeholder="..." />
+                <marker date="1449068190599" expanded="true" signature="239064:239081" placeholder="..." />
+                <marker date="1449068190599" expanded="true" signature="239064:239099" placeholder="..." />
+                <marker date="1449068190599" expanded="true" signature="239064:239112" placeholder="..." />
+                <marker date="1449068190599" expanded="true" signature="239064:239127" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -3079,7 +3078,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449068158855</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update">
+      <created>1449068194239</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1449068194239</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3186,10 +3191,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
-            <marker date="1449068185262" expanded="true" signature="238817:238834" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238852" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238865" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238880" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239081" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239099" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239112" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239127" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -3413,12 +3418,12 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
-            <marker date="1449068185262" expanded="true" signature="238817:238834" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238852" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238865" placeholder="..." />
-            <marker date="1449068185262" expanded="true" signature="238817:238880" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239081" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239099" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239112" placeholder="..." />
+            <marker date="1449068190599" expanded="true" signature="239064:239127" placeholder="..." />
           </folding>
         </state>
       </provider>
