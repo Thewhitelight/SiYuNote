@@ -2,6 +2,8 @@ package cn.libery.siyunote.db;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.List;
+
 /**
  * Created by Libery on 2015/11/1.
  * Email:libery.szq@qq.com
@@ -17,6 +19,8 @@ public class EventRecord extends DataSupport {
     private String pictures;
 
     private String voicePath;
+
+    private String type;
 
     public String getTime() {
         return time;
@@ -57,4 +61,17 @@ public class EventRecord extends DataSupport {
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public static List<EventRecord> getAll() {
+        return DataSupport.findAll(EventRecord.class);
+    }
+
 }

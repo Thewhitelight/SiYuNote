@@ -45,12 +45,12 @@ public class AddNoteActivity extends BaseActivity {
     EditText edtInput;
     @Bind(R.id.photo_view)
     MultiPhotoPickView photoView;
-    @Bind(R.id.add_md)
-    ImageView addMd;
     @Bind(R.id.add_photo)
     ImageView addPhoto;
     @Bind(R.id.add_voice)
     ImageView addVoice;
+    @Bind(R.id.add_type)
+    TextView addType;
     private List<PhotoPickWrapper> mPhotoPickWrapperList = new ArrayList<>();
     private static final int REQUEST_PICK_PHOTO = 0x1;
     private static final int PIC_MAX = 6;
@@ -160,16 +160,7 @@ public class AddNoteActivity extends BaseActivity {
                     .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            EventRecord record = new EventRecord();
-                            record.setTime(tvTime.getText().toString());
-                            record.setContent(edtInput.getText().toString());
-                            record.setTimeStamp(Calendar.getInstance().getTimeInMillis());
-                            String imgUrls = "";
-                            for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
-                                imgUrls += wrapper.getUriString() + ",";
-                            }
-                            record.setPictures(imgUrls);
-                            record.save();
+                            saveRecord();
                             finish();
                         }
                     })
@@ -184,5 +175,18 @@ public class AddNoteActivity extends BaseActivity {
             super.onBackPressed();
         }
 
+    }
+
+    private void saveRecord() {
+        EventRecord record = new EventRecord();
+        record.setTime(tvTime.getText().toString());
+        record.setContent(edtInput.getText().toString());
+        record.setTimeStamp(Calendar.getInstance().getTimeInMillis());
+        String imgUrls = "";
+        for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
+            imgUrls += wrapper.getUriString() + ",";
+        }
+        record.setPictures(imgUrls);
+        record.save();
     }
 }

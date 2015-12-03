@@ -1,8 +1,6 @@
 package cn.libery.siyunote;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -23,8 +21,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import cn.libery.siyunote.ui.AddNoteActivity;
 import cn.libery.siyunote.ui.NoteListFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -32,8 +28,8 @@ public class MainActivity extends AppCompatActivity
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.fab)
-    FloatingActionButton fab;
+  /*  @Bind(R.id.fab)
+    FloatingActionButton fab;*/
     @Bind(R.id.nav_view)
     NavigationView navView;
     @Bind(R.id.drawer_layout)
@@ -60,7 +56,6 @@ public class MainActivity extends AppCompatActivity
             setupViewPager(viewpager);
             tabs.setupWithViewPager(viewpager);
         }
-
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -77,12 +72,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @OnClick(R.id.fab)
+  /*  @OnClick(R.id.fab)
     void addNote() {
-       /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();*/
+       *//* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();*//*
         startActivity(new Intent(this, AddNoteActivity.class));
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
