@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.melnykov.fab.FloatingActionButton;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -55,8 +57,15 @@ public class NoteListFragment extends Fragment {
         ButterKnife.bind(this, view);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
-        NotesAdapter adapter = new NotesAdapter(EventRecord.getAll());
+        final List<EventRecord> records = EventRecord.getAll();
+        NotesAdapter adapter = new NotesAdapter(records);
         notes.setAdapter(adapter);
+        adapter.setOnItemClickListener(new NotesAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                startActivity(NoteDetailActivity.intent(getActivity(), records.get(position).getTimeStamp()));
+            }
+        });
         fab.attachToRecyclerView(notes);
         return view;
     }

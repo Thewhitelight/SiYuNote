@@ -71,7 +71,11 @@ public class EventRecord extends DataSupport {
     }
 
     public static List<EventRecord> getAll() {
-        return DataSupport.findAll(EventRecord.class);
+        return DataSupport.select("*").order("timeStamp desc").find(EventRecord.class);
+    }
+
+    public static EventRecord getByTimeStamp(long timeStamp) {
+        return DataSupport.select("*").where("timeStamp = ?", timeStamp + "").find(EventRecord.class).get(0);
     }
 
 }

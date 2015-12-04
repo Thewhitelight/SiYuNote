@@ -16,23 +16,35 @@ import cn.libery.siyunote.db.EventRecord;
  * Created by Libery on 2015/12/3.
  * Email:libery.szq@qq.com
  */
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> implements View.OnClickListener {
 
+    private int position;
     private List<EventRecord> records;
+    private OnItemClickListener onItemClickListener;
 
     public NotesAdapter(List<EventRecord> records) {
         this.records = records;
 
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
+
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_note, parent, false);
+        view.setOnClickListener(this);
         return new ItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, int position) {
+    public void onBindViewHolder(ItemViewHolder holder, final int position) {
+        this.position = position;
         if ("1".equals(records.get(position).getType())) {
             holder.imageView.setBackgroundResource(R.color.colorAccent);
         } else {
@@ -50,6 +62,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
     @Override
     public int getItemCount() {
         return records.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (onItemClickListener != null) {
+            onItemClickListener.onItemClick(v, position);
+        }
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
