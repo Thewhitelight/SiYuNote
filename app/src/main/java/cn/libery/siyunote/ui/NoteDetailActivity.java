@@ -8,6 +8,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -59,6 +61,12 @@ public class NoteDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_note);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+
         long timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
         EventRecord record = EventRecord.getByTimeStamp(timeStamp);
         if (!TextUtils.isEmpty(record.getPictures())) {
@@ -66,6 +74,19 @@ public class NoteDetailActivity extends BaseActivity {
             String[] recordUrls = record.getPictures().split(",");
             Collections.addAll(urls, recordUrls);
             initCircleViewPager(urls);
+        } else {
+            int random = new Random().nextInt(10);
+            int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
+                    R.drawable.bg_3, R.drawable.bg_4, R.drawable.bg_5,
+                    R.drawable.bg_6, R.drawable.bg_7, R.drawable.bg_8,
+                    R.drawable.bg_9
+            };
+            DefaultSliderView sliderView = new DefaultSliderView(getApplicationContext());
+            sliderView.image(res[random])
+                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+                    .showImageResForEmpty(R.color.image_loading_bg_color);
+            indicatorDefaultCircle.addSlider(sliderView);
+            indicatorDefaultCircle.setIndicatorPosition();
         }
         collapsingToolbar.setExpandedTitleColor(Color.WHITE);
         collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
@@ -76,7 +97,7 @@ public class NoteDetailActivity extends BaseActivity {
 
     private void initCircleViewPager(final ArrayList<String> urls) {
         for (int i = 0; i < urls.size(); i++) {
-            String url = urls.get(i);
+            String url = urls.get(i).split("file:/")[1];
             final int index = i;
             DefaultSliderView sliderView = new DefaultSliderView(getApplicationContext());
             sliderView.image(new File(url))

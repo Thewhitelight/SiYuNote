@@ -16,9 +16,8 @@ import cn.libery.siyunote.db.EventRecord;
  * Created by Libery on 2015/12/3.
  * Email:libery.szq@qq.com
  */
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> implements View.OnClickListener {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> {
 
-    private int position;
     private List<EventRecord> records;
     private OnItemClickListener onItemClickListener;
 
@@ -38,13 +37,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_note, parent, false);
-        view.setOnClickListener(this);
-        return new ItemViewHolder(view);
+        return new ItemViewHolder(view, onItemClickListener);
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, final int position) {
-        this.position = position;
+    public void onBindViewHolder(ItemViewHolder holder, int position) {
         if ("1".equals(records.get(position).getType())) {
             holder.imageView.setBackgroundResource(R.color.colorAccent);
         } else {
@@ -64,25 +61,27 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
         return records.size();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (onItemClickListener != null) {
-            onItemClickListener.onItemClick(v, position);
-        }
-    }
-
-    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+    public static class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView imageView;
         public TextView title;
         public TextView menu;
+        private OnItemClickListener onItemClickListener;
 
-        public ItemViewHolder(View itemView) {
+        public ItemViewHolder(View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.note_type);
             title = (TextView) itemView.findViewById(R.id.note_title);
             menu = (TextView) itemView.findViewById(R.id.note_menu);
+            this.onItemClickListener = onItemClickListener;
+            itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(v, getAdapterPosition());
+            }
+        }
     }
 }
