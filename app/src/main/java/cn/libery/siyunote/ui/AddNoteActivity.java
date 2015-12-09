@@ -1,5 +1,6 @@
 package cn.libery.siyunote.ui;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -27,9 +28,13 @@ import cn.libery.library_multiphotopick.photopick.ImageInfo;
 import cn.libery.library_multiphotopick.photopick.PhotoOperate;
 import cn.libery.library_multiphotopick.photopick.PhotoPickActivity;
 import cn.libery.siyunote.Constants;
+import cn.libery.siyunote.Intents;
+import cn.libery.siyunote.MainActivity;
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.db.EventRecord;
 import cn.libery.siyunote.model.wrapper.PhotoPickWrapper;
+import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.RefreshOtto;
 import cn.libery.siyunote.utils.TimeUtils;
 import cn.libery.siyunote.widget.MultiPhotoPickView;
 
@@ -54,12 +59,20 @@ public class AddNoteActivity extends BaseActivity {
     private List<PhotoPickWrapper> mPhotoPickWrapperList = new ArrayList<>();
     private static final int REQUEST_PICK_PHOTO = 0x1;
     private static final int PIC_MAX = 6;
+    private int position;
+
+    public static Intent intent(Context context, int position) {
+        return new Intents.Builder().setClass(context, AddNoteActivity.class)
+                .add(Constants.VIEW_PAGER_POSITION, position)
+                .toIntent();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
         ButterKnife.bind(this);
+        position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
         setTitle(R.string.title_activity_add);
         initView();
     }
@@ -162,6 +175,8 @@ public class AddNoteActivity extends BaseActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             saveRecord();
                             finish();
+                            BusProvider.getInstance().post(new RefreshOtto(true));
+                            startActivity(MainActivity.intent(getApplicationContext(),position));
                         }
                     })
                     .setNegativeButton("不保存", new DialogInterface.OnClickListener() {

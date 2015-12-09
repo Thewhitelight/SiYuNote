@@ -18,4 +18,5 @@ public class Constants {
     public static final int NOTES_LIFE = 2;
     public static final String EXTRA_MAX = "EXTRA_MAX";
     public static final String EXTRA_TIMESTAMP = "EXTRA_TIMESTAMP";
+    public static final String VIEW_PAGER_POSITION = "VIEW_PAGER_POSITION";
 }

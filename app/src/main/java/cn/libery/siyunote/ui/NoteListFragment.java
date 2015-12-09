@@ -1,6 +1,5 @@
 package cn.libery.siyunote.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,10 +23,12 @@ import cn.libery.siyunote.db.EventRecord;
 public class NoteListFragment extends Fragment {
 
     private static int NoteTypes;
+
     @Bind(R.id.notes)
     RecyclerView notes;
     @Bind(R.id.fab)
     FloatingActionButton fab;
+    private List<EventRecord> records;
 
     public static NoteListFragment newInstance(int NoteType) {
         NoteListFragment fragment = new NoteListFragment();
@@ -44,6 +45,7 @@ public class NoteListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         switch (NoteTypes) {
             case 0:
                 break;
@@ -55,24 +57,29 @@ public class NoteListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
         ButterKnife.bind(this, view);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        records = EventRecord.getAll();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
-        final List<EventRecord> records = EventRecord.getAll();
         NotesAdapter adapter = new NotesAdapter(records);
         notes.setAdapter(adapter);
         adapter.setOnItemClickListener(new NotesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                startActivity(NoteDetailActivity.intent(getActivity(), records.get(position).getTimeStamp()));
+                startActivity(NoteDetailActivity.intent(getActivity(), records.get(position).getTimeStamp(), NoteTypes));
             }
         });
         fab.attachToRecyclerView(notes);
-        return view;
     }
 
     @OnClick(R.id.fab)
     void addNote() {
-        startActivity(new Intent(getActivity(), AddNoteActivity.class));
+        startActivity(AddNoteActivity.intent(getActivity(), getArguments().getInt(Constants.NOTES_TYPE)));
     }
 
     @Override

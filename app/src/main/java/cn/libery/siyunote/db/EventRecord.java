@@ -78,4 +78,7 @@ public class EventRecord extends DataSupport {
         return DataSupport.select("*").where("timeStamp = ?", timeStamp + "").find(EventRecord.class).get(0);
     }
 
+    public static void deleteBy(long timeStamp) {
+        DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
+    }
 }

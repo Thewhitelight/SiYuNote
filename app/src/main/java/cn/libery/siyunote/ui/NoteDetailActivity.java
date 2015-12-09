@@ -1,16 +1,21 @@
 package cn.libery.siyunote.ui;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.io.File;
@@ -22,8 +27,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
+import cn.libery.siyunote.MainActivity;
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.db.EventRecord;
+import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.RefreshOtto;
 import cn.lightsky.infiniteindicator.InfiniteIndicatorLayout;
 import cn.lightsky.infiniteindicator.slideview.BaseSliderView;
 import cn.lightsky.infiniteindicator.slideview.DefaultSliderView;
@@ -50,10 +58,20 @@ public class NoteDetailActivity extends BaseActivity {
     TextView noteContent;
     @Bind(R.id.note_edit)
     FloatingActionButton noteEdit;
+    private long timeStamp;
+    private int position;
 
-    public static Intent intent(Context context, long timeStamp) {
+  /*  public static Intent intent(Context context, long timeStamp) {
         return new Intents.Builder().setClass(context, NoteDetailActivity.class)
-                .add(Constants.EXTRA_TIMESTAMP, timeStamp).toIntent();
+                .add(Constants.EXTRA_TIMESTAMP, timeStamp)
+                .toIntent();
+    }*/
+
+    public static Intent intent(Context context, long timeStamp, int position) {
+        return new Intents.Builder().setClass(context, NoteDetailActivity.class)
+                .add(Constants.EXTRA_TIMESTAMP, timeStamp)
+                .add(Constants.VIEW_PAGER_POSITION, position)
+                .toIntent();
     }
 
     @Override
@@ -61,13 +79,13 @@ public class NoteDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_note);
         ButterKnife.bind(this);
+        position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
         }
-
-        long timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
+        timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
         EventRecord record = EventRecord.getByTimeStamp(timeStamp);
         if (!TextUtils.isEmpty(record.getPictures())) {
             ArrayList<String> urls = new ArrayList<>();
@@ -76,7 +94,7 @@ public class NoteDetailActivity extends BaseActivity {
             initCircleViewPager(urls);
         } else {
             int random = new Random().nextInt(10);
-            int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
+            @DrawableRes int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
                     R.drawable.bg_3, R.drawable.bg_4, R.drawable.bg_5,
                     R.drawable.bg_6, R.drawable.bg_7, R.drawable.bg_8,
                     R.drawable.bg_9
@@ -86,6 +104,7 @@ public class NoteDetailActivity extends BaseActivity {
                     .setScaleType(BaseSliderView.ScaleType.CenterCrop)
                     .showImageResForEmpty(R.color.image_loading_bg_color);
             indicatorDefaultCircle.addSlider(sliderView);
+            indicatorDefaultCircle.startAutoScroll();
             indicatorDefaultCircle.setIndicatorPosition();
         }
         collapsingToolbar.setExpandedTitleColor(Color.WHITE);
@@ -114,4 +133,32 @@ public class NoteDetailActivity extends BaseActivity {
         }
         indicatorDefaultCircle.setIndicatorPosition();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.delete_note, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_delete) {
+
+            new AlertDialog.Builder(this)
+                    .setMessage("您确定要删除此便签吗")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            EventRecord.deleteBy(timeStamp);
+                            finish();
+                            BusProvider.getInstance().post(new RefreshOtto(true));
+                            startActivity(MainActivity.intent(getApplicationContext(),position));
+                        }
+                    })
+                    .setNegativeButton("取消", null)
+                    .show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

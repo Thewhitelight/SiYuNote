@@ -1,5 +1,7 @@
 package cn.libery.siyunote;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -16,11 +18,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.squareup.otto.Subscribe;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.RefreshOtto;
 import cn.libery.siyunote.ui.NoteListFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -28,8 +34,6 @@ public class MainActivity extends AppCompatActivity
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-  /*  @Bind(R.id.fab)
-    FloatingActionButton fab;*/
     @Bind(R.id.nav_view)
     NavigationView navView;
     @Bind(R.id.drawer_layout)
@@ -39,10 +43,25 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.viewpager)
     ViewPager viewpager;
     private long firstBackPressedTime;
+    private int position;
+
+    public static Intent intent(Context context, int position) {
+        return new Intents.Builder().setClass(context, MainActivity.class)
+                .add(Constants.VIEW_PAGER_POSITION, position)
+                .toIntent();
+    }
+
+    @Subscribe
+    public void refreshRecord(RefreshOtto otto) {
+        if (otto.ismRefresh()) {
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        BusProvider.getInstance().register(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
@@ -56,6 +75,12 @@ public class MainActivity extends AppCompatActivity
             setupViewPager(viewpager);
             tabs.setupWithViewPager(viewpager);
         }
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            int position = bundle.getInt(Constants.VIEW_PAGER_POSITION);
+            viewpager.setCurrentItem(position, false);
+        }
+
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -69,7 +94,6 @@ public class MainActivity extends AppCompatActivity
         fragment = NoteListFragment.newInstance(Constants.NOTES_LIFE);
         adapter.addFragment(fragment, "生活");
         viewpager.setAdapter(adapter);
-
     }
 
   /*  @OnClick(R.id.fab)
@@ -87,9 +111,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
+        if (item.getItemId() == R.id.action_settings) {
             return true;
         }
 
@@ -162,5 +184,11 @@ public class MainActivity extends AppCompatActivity
                 finish();
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        BusProvider.getInstance().unregister(this);
     }
 }
