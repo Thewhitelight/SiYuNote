@@ -81,4 +81,8 @@ public class EventRecord extends DataSupport {
     public static void deleteBy(long timeStamp) {
         DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
     }
+
+    public static void updateRecord(long timeStamp) {
+
+    }
 }

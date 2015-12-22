@@ -19,4 +19,5 @@ public class Constants {
     public static final String EXTRA_MAX = "EXTRA_MAX";
     public static final String EXTRA_TIMESTAMP = "EXTRA_TIMESTAMP";
     public static final String VIEW_PAGER_POSITION = "VIEW_PAGER_POSITION";
+    public static final String NOTE_TIME_STAMP = "NOTE_TIME_STAMP";
 }

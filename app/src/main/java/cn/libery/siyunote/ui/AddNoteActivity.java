@@ -18,6 +18,7 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -60,6 +61,8 @@ public class AddNoteActivity extends BaseActivity {
     private static final int REQUEST_PICK_PHOTO = 0x1;
     private static final int PIC_MAX = 6;
     private int position;
+    private long timestamp;
+    private EventRecord eventRecord;
 
     public static Intent intent(Context context, int position) {
         return new Intents.Builder().setClass(context, AddNoteActivity.class)
@@ -67,48 +70,92 @@ public class AddNoteActivity extends BaseActivity {
                 .toIntent();
     }
 
+
+    public static Intent intentEdit(Context context, long timeStamp) {
+        return new Intents.Builder().setClass(context, AddNoteActivity.class)
+                .add(Constants.NOTE_TIME_STAMP, timeStamp)
+                .toIntent();
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
+        timestamp = getIntent().getLongExtra(Constants.NOTE_TIME_STAMP, 0);
         ButterKnife.bind(this);
         position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
         setTitle(R.string.title_activity_add);
-        initView();
+        initData();
     }
 
     CharSequence size = "";
 
-    private void initView() {
-        long nowTime = Calendar.getInstance(Locale.CHINA).getTime().getTime();
-        tvTime.setText(TimeUtils.yyyyMMddChinese(nowTime) + "  " + TimeUtils.hhMM(nowTime));
-        edtInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    private void initData() {
+        if (timestamp != 0) {
+            eventRecord = EventRecord.getByTimeStamp(timestamp);
+            tvTime.setText(eventRecord.getTime());
+            tvNum.setText(eventRecord.getContent().length() + "");
+            edtInput.setText(eventRecord.getContent());
+            edtInput.setSelection(eventRecord.getContent().length());
+            String[] pics = eventRecord.getPictures().split(",");
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                size = s;
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                tvNum.setText(size.length() + "");
-            }
-        });
-
-        photoView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            if (pics.length > 1) {
                 ArrayList<String> urls = new ArrayList<>();
-                for (int i = 0; i < mPhotoPickWrapperList.size(); i++) {
-                    urls.add(mPhotoPickWrapperList.get(i).getUriString());
-                }
-                startActivity(ViewPagerActivity.intent(getApplicationContext(), urls, 0));
+                Collections.addAll(urls, pics);
+                photoView.setVisibility(View.VISIBLE);
+                photoView.setImages(urls);
             }
-        });
+
+            edtInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    size = s;
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    tvNum.setText(size.length() + "");
+                }
+            });
+        } else {
+            long nowTime = Calendar.getInstance(Locale.CHINA).getTime().getTime();
+            tvTime.setText(TimeUtils.yyyyMMddChinese(nowTime) + "  " + TimeUtils.hhMM(nowTime));
+            edtInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    size = s;
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    tvNum.setText(size.length() + "");
+                }
+            });
+
+            photoView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ArrayList<String> urls = new ArrayList<>();
+                    for (int i = 0; i < mPhotoPickWrapperList.size(); i++) {
+                        urls.add(mPhotoPickWrapperList.get(i).getUriString());
+                    }
+                    startActivity(ViewPagerActivity.intent(getApplicationContext(), urls, 0));
+                }
+            });
+        }
+
+
     }
 
     @OnClick(R.id.add_photo)
@@ -165,7 +212,6 @@ public class AddNoteActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-
         if (!TextUtils.isEmpty(edtInput.getText()) || mPhotoPickWrapperList.size() > 0) {
             new AlertDialog.Builder(this)
                     .setTitle("笔记")
@@ -173,10 +219,14 @@ public class AddNoteActivity extends BaseActivity {
                     .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            saveRecord();
+                            if (timestamp != 0) {
+                                updateRecord();
+                            } else {
+                                saveRecord();
+                                BusProvider.getInstance().post(new RefreshOtto(true));
+                                startActivity(MainActivity.intent(getApplicationContext(), position));
+                            }
                             finish();
-                            BusProvider.getInstance().post(new RefreshOtto(true));
-                            startActivity(MainActivity.intent(getApplicationContext(),position));
                         }
                     })
                     .setNegativeButton("不保存", new DialogInterface.OnClickListener() {
@@ -192,6 +242,13 @@ public class AddNoteActivity extends BaseActivity {
 
     }
 
+    private void updateRecord() {
+        EventRecord updateRecord = new EventRecord();
+        updateRecord.setTime(tvTime.getText().toString());
+        updateRecord.setContent(edtInput.getText().toString());
+        updateRecord.updateAll("timeStamp = ?", String.valueOf(timestamp));
+    }
+
     private void saveRecord() {
         EventRecord record = new EventRecord();
         record.setTime(tvTime.getText().toString());
@@ -204,4 +261,6 @@ public class AddNoteActivity extends BaseActivity {
         record.setPictures(imgUrls);
         record.save();
     }
+
+
 }

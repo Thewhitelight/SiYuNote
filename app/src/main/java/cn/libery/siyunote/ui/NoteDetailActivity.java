@@ -25,6 +25,7 @@ import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
 import cn.libery.siyunote.MainActivity;
@@ -60,12 +61,9 @@ public class NoteDetailActivity extends BaseActivity {
     FloatingActionButton noteEdit;
     private long timeStamp;
     private int position;
-
-  /*  public static Intent intent(Context context, long timeStamp) {
-        return new Intents.Builder().setClass(context, NoteDetailActivity.class)
-                .add(Constants.EXTRA_TIMESTAMP, timeStamp)
-                .toIntent();
-    }*/
+    private int random;
+    private ArrayList<String> urls;
+    private EventRecord record;
 
     public static Intent intent(Context context, long timeStamp, int position) {
         return new Intents.Builder().setClass(context, NoteDetailActivity.class)
@@ -86,14 +84,14 @@ public class NoteDetailActivity extends BaseActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
         timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
-        EventRecord record = EventRecord.getByTimeStamp(timeStamp);
+        random = new Random().nextInt(10);
+        urls = new ArrayList<>();
+        record = EventRecord.getByTimeStamp(timeStamp);
         if (!TextUtils.isEmpty(record.getPictures())) {
-            ArrayList<String> urls = new ArrayList<>();
             String[] recordUrls = record.getPictures().split(",");
             Collections.addAll(urls, recordUrls);
             initCircleViewPager(urls);
         } else {
-            int random = new Random().nextInt(10);
             @DrawableRes int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
                     R.drawable.bg_3, R.drawable.bg_4, R.drawable.bg_5,
                     R.drawable.bg_6, R.drawable.bg_7, R.drawable.bg_8,
@@ -104,9 +102,18 @@ public class NoteDetailActivity extends BaseActivity {
                     .setScaleType(BaseSliderView.ScaleType.CenterCrop)
                     .showImageResForEmpty(R.color.image_loading_bg_color);
             indicatorDefaultCircle.addSlider(sliderView);
-            indicatorDefaultCircle.startAutoScroll();
             indicatorDefaultCircle.setIndicatorPosition();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        iniData();
+    }
+
+    private void iniData() {
+        record = EventRecord.getByTimeStamp(timeStamp);
         collapsingToolbar.setExpandedTitleColor(Color.WHITE);
         collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
         noteTime.setText(record.getTime());
@@ -131,7 +138,13 @@ public class NoteDetailActivity extends BaseActivity {
                     });
             indicatorDefaultCircle.addSlider(sliderView);
         }
+        indicatorDefaultCircle.startAutoScroll();
         indicatorDefaultCircle.setIndicatorPosition();
+    }
+
+    @OnClick(R.id.note_edit)
+    void addNote() {
+        startActivity(AddNoteActivity.intentEdit(this, timeStamp));
     }
 
     @Override
@@ -150,9 +163,9 @@ public class NoteDetailActivity extends BaseActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             EventRecord.deleteBy(timeStamp);
-                            finish();
                             BusProvider.getInstance().post(new RefreshOtto(true));
-                            startActivity(MainActivity.intent(getApplicationContext(),position));
+                            startActivity(MainActivity.intent(getApplicationContext(), position));
+                            finish();
                         }
                     })
                     .setNegativeButton("取消", null)
