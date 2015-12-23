@@ -28,7 +28,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
-import cn.libery.siyunote.MainActivity;
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.db.EventRecord;
 import cn.libery.siyunote.otto.BusProvider;
@@ -164,7 +163,6 @@ public class NoteDetailActivity extends BaseActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             EventRecord.deleteBy(timeStamp);
                             BusProvider.getInstance().post(new RefreshOtto(true));
-                            startActivity(MainActivity.intent(getApplicationContext(), position));
                             finish();
                         }
                     })

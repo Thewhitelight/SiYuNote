@@ -18,16 +18,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.squareup.otto.Subscribe;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import cn.libery.siyunote.otto.BusProvider;
-import cn.libery.siyunote.otto.RefreshOtto;
-import cn.libery.siyunote.ui.NoteListFragment;
+import cn.libery.siyunote.ui.AllNoteFragment;
+import cn.libery.siyunote.ui.LifeNoteFragment;
+import cn.libery.siyunote.ui.WorkNoteFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +42,7 @@ public class MainActivity extends AppCompatActivity
     ViewPager viewpager;
     private long firstBackPressedTime;
     private int position;
+    private Adapter adapter;
 
     public static Intent intent(Context context, int position) {
         return new Intents.Builder().setClass(context, MainActivity.class)
@@ -51,17 +50,9 @@ public class MainActivity extends AppCompatActivity
                 .toIntent();
     }
 
-    @Subscribe
-    public void refreshRecord(RefreshOtto otto) {
-        if (otto.ismRefresh()) {
-            finish();
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BusProvider.getInstance().register(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
@@ -70,7 +61,7 @@ public class MainActivity extends AppCompatActivity
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
-
+        adapter = new Adapter(getSupportFragmentManager());
         if (viewpager != null) {
             setupViewPager(viewpager);
             tabs.setupWithViewPager(viewpager);
@@ -80,19 +71,22 @@ public class MainActivity extends AppCompatActivity
             int position = bundle.getInt(Constants.VIEW_PAGER_POSITION);
             viewpager.setCurrentItem(position, false);
         }
-
         navView.setNavigationItemSelectedListener(this);
     }
 
-    private void setupViewPager(ViewPager viewpager) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
 
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-        NoteListFragment fragment = NoteListFragment.newInstance(Constants.NOTES_ALL);
-        adapter.addFragment(fragment, "全部");
-        fragment = NoteListFragment.newInstance(Constants.NOTES_WORK);
-        adapter.addFragment(fragment, "工作");
-        fragment = NoteListFragment.newInstance(Constants.NOTES_LIFE);
-        adapter.addFragment(fragment, "生活");
+    private void setupViewPager(ViewPager viewpager) {
+        AllNoteFragment mAllNoteFragment = AllNoteFragment.newInstance();
+        adapter.addFragment(mAllNoteFragment, "全部");
+        WorkNoteFragment mWorkNoteFragment = WorkNoteFragment.newInstance();
+        adapter.addFragment(mWorkNoteFragment, "工作");
+        LifeNoteFragment mLifeNoteFragment = LifeNoteFragment.newInstance();
+        adapter.addFragment(mLifeNoteFragment, "生活");
         viewpager.setAdapter(adapter);
     }
 
@@ -184,11 +178,5 @@ public class MainActivity extends AppCompatActivity
                 finish();
             }
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        BusProvider.getInstance().unregister(this);
     }
 }

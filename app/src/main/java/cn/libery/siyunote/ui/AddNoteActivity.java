@@ -30,7 +30,6 @@ import cn.libery.library_multiphotopick.photopick.PhotoOperate;
 import cn.libery.library_multiphotopick.photopick.PhotoPickActivity;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
-import cn.libery.siyunote.MainActivity;
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.db.EventRecord;
 import cn.libery.siyunote.model.wrapper.PhotoPickWrapper;
@@ -222,9 +221,8 @@ public class AddNoteActivity extends BaseActivity {
                                 updateRecord();
                             } else {
                                 saveRecord();
-                                BusProvider.getInstance().post(new RefreshOtto(true));
-                                startActivity(MainActivity.intent(getApplicationContext(), position));
                             }
+                            BusProvider.getInstance().post(new RefreshOtto(true));
                             finish();
                         }
                     })
