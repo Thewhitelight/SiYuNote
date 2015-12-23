@@ -62,7 +62,6 @@ public class AddNoteActivity extends BaseActivity {
     private static final int PIC_MAX = 6;
     private int position;
     private long timestamp;
-    private EventRecord eventRecord;
 
     public static Intent intent(Context context, int position) {
         return new Intents.Builder().setClass(context, AddNoteActivity.class)
@@ -93,7 +92,7 @@ public class AddNoteActivity extends BaseActivity {
 
     private void initData() {
         if (timestamp != 0) {
-            eventRecord = EventRecord.getByTimeStamp(timestamp);
+            EventRecord eventRecord = EventRecord.getByTimeStamp(timestamp);
             tvTime.setText(eventRecord.getTime());
             tvNum.setText(eventRecord.getContent().length() + "");
             edtInput.setText(eventRecord.getContent());

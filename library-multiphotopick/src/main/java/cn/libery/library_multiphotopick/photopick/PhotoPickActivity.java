@@ -285,13 +285,9 @@ public class PhotoPickActivity extends AppCompatActivity implements LoaderManage
     }
 
     private void send() {
-        if (mPickData.isEmpty()) {
-            setResult(Activity.RESULT_CANCELED);
-        } else {
-            Intent intent = new Intent();
-            intent.putExtra("data", mPickData);
-            setResult(Activity.RESULT_OK, intent);
-        }
+        Intent intent = new Intent();
+        intent.putExtra("data", mPickData);
+        setResult(Activity.RESULT_OK, intent);
         finish();
     }
 
