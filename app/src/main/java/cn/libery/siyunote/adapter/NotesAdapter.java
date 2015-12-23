@@ -18,12 +18,15 @@ import cn.libery.siyunote.db.EventRecord;
  */
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHolder> {
 
+
     private List<EventRecord> records;
     private OnItemClickListener onItemClickListener;
 
-    public NotesAdapter(List<EventRecord> records) {
-        this.records = records;
+    public NotesAdapter() {
+    }
 
+    public void setRecords(List<EventRecord> records) {
+        this.records = records;
     }
 
     public interface OnItemClickListener {

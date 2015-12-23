@@ -61,10 +61,10 @@ public class AllNoteFragment extends Fragment {
 
     @Subscribe
     public void refreshRecord(RefreshOtto otto) {
-        if (otto.ismRefresh()) {
+        if (otto!=null&&otto.ismRefresh()) {
             records.clear();
             records = EventRecord.getAll();
-            adapter = new NotesAdapter(records);
+            adapter.setRecords(records);
             notes.setAdapter(adapter);
         }
     }
@@ -80,7 +80,8 @@ public class AllNoteFragment extends Fragment {
         records = EventRecord.getAll();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
-        adapter = new NotesAdapter(records);
+        adapter = new NotesAdapter();
+        adapter.setRecords(records);
         notes.setAdapter(adapter);
         adapter.setOnItemClickListener(new NotesAdapter.OnItemClickListener() {
             @Override
