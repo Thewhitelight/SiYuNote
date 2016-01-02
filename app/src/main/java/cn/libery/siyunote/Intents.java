@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Intents {
 
-    public static final String INTENT_PREFIX = "cn.libery.siyunote";
+    public static final String INTENT_PREFIX = BuildConfig.APPLICATION_ID;
 
     public static class Builder {
 
