@@ -61,7 +61,6 @@ public class NoteDetailActivity extends BaseActivity {
     private long timeStamp;
     private int position;
     private int random;
-    private ArrayList<String> urls;
     private EventRecord record;
 
     public static Intent intent(Context context, long timeStamp, int position) {
@@ -84,25 +83,6 @@ public class NoteDetailActivity extends BaseActivity {
         }
         timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
         random = new Random().nextInt(10);
-        urls = new ArrayList<>();
-        record = EventRecord.getByTimeStamp(timeStamp);
-        if (!TextUtils.isEmpty(record.getPictures())) {
-            String[] recordUrls = record.getPictures().split(",");
-            Collections.addAll(urls, recordUrls);
-            initCircleViewPager(urls);
-        } else {
-            @DrawableRes int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
-                    R.drawable.bg_3, R.drawable.bg_4, R.drawable.bg_5,
-                    R.drawable.bg_6, R.drawable.bg_7, R.drawable.bg_8,
-                    R.drawable.bg_9
-            };
-            DefaultSliderView sliderView = new DefaultSliderView(getApplicationContext());
-            sliderView.image(res[random])
-                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
-                    .showImageResForEmpty(R.color.image_loading_bg_color);
-            indicatorDefaultCircle.addSlider(sliderView);
-            indicatorDefaultCircle.setIndicatorPosition();
-        }
     }
 
     @Override
@@ -117,10 +97,31 @@ public class NoteDetailActivity extends BaseActivity {
         collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
         noteTime.setText(record.getTime());
         noteContent.setText(record.getContent());
+        ArrayList<String> urls = new ArrayList<>();
+        record = EventRecord.getByTimeStamp(timeStamp);
+        if (!TextUtils.isEmpty(record.getPictures())) {
+            String[] recordUrls = record.getPictures().split(",");
+            Collections.addAll(urls, recordUrls);
+            initCircleViewPager(urls);
+        } else {
+            indicatorDefaultCircle.removeSlider();
+            @DrawableRes final int[] res = new int[]{R.drawable.bg_1, R.drawable.bg_10, R.drawable.bg_2,
+                    R.drawable.bg_3, R.drawable.bg_4, R.drawable.bg_5,
+                    R.drawable.bg_6, R.drawable.bg_7, R.drawable.bg_8,
+                    R.drawable.bg_9
+            };
+            DefaultSliderView sliderView = new DefaultSliderView(getApplicationContext());
+            sliderView.image(res[random])
+                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+                    .showImageResForEmpty(R.color.image_loading_bg_color);
+            indicatorDefaultCircle.addSlider(sliderView);
+            indicatorDefaultCircle.setIndicatorPosition();
+        }
     }
 
 
     private void initCircleViewPager(final ArrayList<String> urls) {
+        indicatorDefaultCircle.removeSlider();
         for (int i = 0; i < urls.size(); i++) {
             String url = urls.get(i).split("file:/")[1];
             final int index = i;

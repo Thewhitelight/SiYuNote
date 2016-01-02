@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar_main" />
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/toolbar_main" />
 
     <RelativeLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/top_bar"
         android:paddingLeft="6dp"
         android:paddingRight="6dp">
 
@@ -34,8 +37,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="9.5"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/top"
         android:paddingLeft="6dp"
         android:paddingRight="6dp">
 
@@ -65,8 +69,10 @@
 
 
     <LinearLayout
+        android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_weight="0.5"
         android:orientation="horizontal"
         android:paddingBottom="6dp"
@@ -78,7 +84,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="工作" />
+            android:text="工作"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
         <ImageView
@@ -100,4 +108,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

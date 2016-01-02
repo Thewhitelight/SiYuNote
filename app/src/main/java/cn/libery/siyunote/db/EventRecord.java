@@ -20,7 +20,7 @@ public class EventRecord extends DataSupport {
 
     private String voicePath;
 
-    private String type;
+    private int type;
 
     public String getTime() {
         return time;
@@ -62,11 +62,11 @@ public class EventRecord extends DataSupport {
         this.timeStamp = timeStamp;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 

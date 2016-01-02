@@ -40,6 +40,7 @@ public class AllNoteFragment extends Fragment {
 
     public static AllNoteFragment newInstance() {
         Bundle args = new Bundle();
+        args.putInt(Constants.NOTES_TYPE, 0);
         AllNoteFragment fragment = new AllNoteFragment();
         fragment.setArguments(args);
         return fragment;
@@ -61,7 +62,7 @@ public class AllNoteFragment extends Fragment {
 
     @Subscribe
     public void refreshRecord(RefreshOtto otto) {
-        if (otto!=null&&otto.ismRefresh()) {
+        if (otto != null && otto.ismRefresh() && records != null && adapter != null && notes != null) {
             records.clear();
             records = EventRecord.getAll();
             adapter.setRecords(records);

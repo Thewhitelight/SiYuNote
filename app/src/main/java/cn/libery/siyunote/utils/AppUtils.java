@@ -20,4 +20,21 @@ public class AppUtils {
         }
         return packInfo;
     }
+
+
+    public static String getNoteType(int noteType) {
+        String noteTypeStr = "";
+        switch (noteType) {
+            case 0:
+                noteTypeStr = "全部";
+                break;
+            case 1:
+                noteTypeStr = "工作";
+                break;
+            case 2:
+                noteTypeStr = "生活";
+                break;
+        }
+        return noteTypeStr;
+    }
 }
