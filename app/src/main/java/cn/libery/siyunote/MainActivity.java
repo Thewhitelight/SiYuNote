@@ -1,8 +1,8 @@
 package cn.libery.siyunote;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -23,17 +23,15 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import cn.libery.siyunote.ui.AddNoteActivity;
-import cn.libery.siyunote.ui.NoteListFragment;
+import cn.libery.siyunote.ui.AllNoteFragment;
+import cn.libery.siyunote.ui.LifeNoteFragment;
+import cn.libery.siyunote.ui.WorkNoteFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.fab)
-    FloatingActionButton fab;
     @Bind(R.id.nav_view)
     NavigationView navView;
     @Bind(R.id.drawer_layout)
@@ -43,6 +41,14 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.viewpager)
     ViewPager viewpager;
     private long firstBackPressedTime;
+    private int position;
+    private Adapter adapter;
+
+    public static Intent intent(Context context, int position) {
+        return new Intents.Builder().setClass(context, MainActivity.class)
+                .add(Constants.VIEW_PAGER_POSITION, position)
+                .toIntent();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,34 +61,41 @@ public class MainActivity extends AppCompatActivity
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
-
+        adapter = new Adapter(getSupportFragmentManager());
         if (viewpager != null) {
             setupViewPager(viewpager);
             tabs.setupWithViewPager(viewpager);
         }
-
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            int position = bundle.getInt(Constants.VIEW_PAGER_POSITION);
+            viewpager.setCurrentItem(position, false);
+        }
         navView.setNavigationItemSelectedListener(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
     private void setupViewPager(ViewPager viewpager) {
-
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-        NoteListFragment fragment = NoteListFragment.newInstance(Constants.NOTES_ALL);
-        adapter.addFragment(fragment, "全部");
-        fragment = NoteListFragment.newInstance(Constants.NOTES_WORK);
-        adapter.addFragment(fragment, "工作");
-        fragment = NoteListFragment.newInstance(Constants.NOTES_LIFE);
-        adapter.addFragment(fragment, "生活");
+        AllNoteFragment mAllNoteFragment = AllNoteFragment.newInstance();
+        adapter.addFragment(mAllNoteFragment, "全部");
+        WorkNoteFragment mWorkNoteFragment = WorkNoteFragment.newInstance();
+        adapter.addFragment(mWorkNoteFragment, "工作");
+        LifeNoteFragment mLifeNoteFragment = LifeNoteFragment.newInstance();
+        adapter.addFragment(mLifeNoteFragment, "生活");
         viewpager.setAdapter(adapter);
-
     }
 
-    @OnClick(R.id.fab)
+  /*  @OnClick(R.id.fab)
     void addNote() {
-       /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();*/
+       *//* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();*//*
         startActivity(new Intent(this, AddNoteActivity.class));
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,9 +105,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
+        if (item.getItemId() == R.id.action_settings) {
             return true;
         }
 

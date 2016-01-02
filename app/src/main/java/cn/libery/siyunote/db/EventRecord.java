@@ -2,6 +2,8 @@ package cn.libery.siyunote.db;
 
 import org.litepal.crud.DataSupport;
 
+import java.util.List;
+
 /**
  * Created by Libery on 2015/11/1.
  * Email:libery.szq@qq.com
@@ -17,6 +19,8 @@ public class EventRecord extends DataSupport {
     private String pictures;
 
     private String voicePath;
+
+    private int type;
 
     public String getTime() {
         return time;
@@ -57,4 +61,33 @@ public class EventRecord extends DataSupport {
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public static List<EventRecord> getAllNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 0").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getWorkNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 1").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getLifeNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 2").find(EventRecord.class);
+    }
+
+    public static EventRecord getByTimeStamp(long timeStamp) {
+        return DataSupport.select("*").where("timeStamp = ?", timeStamp + "").find(EventRecord.class).get(0);
+    }
+
+    public static void deleteBy(long timeStamp) {
+        DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
+    }
+
 }

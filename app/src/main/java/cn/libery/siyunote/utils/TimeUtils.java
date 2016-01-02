@@ -1,6 +1,7 @@
 package cn.libery.siyunote.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -20,5 +21,10 @@ public class TimeUtils {
 
     public static String yyyyMMddChinese(long date) {
         return sdf5.format(new Date(date));
+    }
+
+    public static String getNowTime() {
+        long nowTime = Calendar.getInstance(Locale.CHINA).getTime().getTime();
+        return TimeUtils.yyyyMMddChinese(nowTime) + "  " + TimeUtils.hhMM(nowTime);
     }
 }
