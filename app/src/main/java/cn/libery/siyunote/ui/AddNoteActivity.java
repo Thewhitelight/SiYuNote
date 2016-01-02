@@ -68,7 +68,7 @@ public class AddNoteActivity extends BaseActivity {
 
     public static Intent intent(Context context, int noteType) {
         return new Intents.Builder().setClass(context, AddNoteActivity.class)
-                .add(Constants.VIEW_PAGER_POSITION, noteType)
+                .add(Constants.NOTES_TYPE, noteType)
                 .toIntent();
     }
 

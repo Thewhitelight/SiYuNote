@@ -39,7 +39,6 @@ public class LifeNoteFragment extends Fragment {
 
     public static LifeNoteFragment newInstance() {
         Bundle args = new Bundle();
-        args.putInt(Constants.NOTES_TYPE, 2);
         LifeNoteFragment fragment = new LifeNoteFragment();
         fragment.setArguments(args);
         return fragment;
@@ -63,7 +62,7 @@ public class LifeNoteFragment extends Fragment {
     public void refreshRecord(RefreshOtto otto) {
         if (otto != null && otto.ismRefresh() && records != null && adapter != null && notes != null) {
             records.clear();
-            records = EventRecord.getAll();
+            records = EventRecord.getLifeNotes();
             adapter.setRecords(records);
             notes.setAdapter(adapter);
         }
@@ -72,7 +71,7 @@ public class LifeNoteFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        records = EventRecord.getAll();
+        records = EventRecord.getLifeNotes();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
         adapter = new NotesAdapter();
@@ -89,7 +88,7 @@ public class LifeNoteFragment extends Fragment {
 
     @OnClick(R.id.fab)
     void addNote() {
-        startActivity(AddNoteActivity.intent(getActivity(), getArguments().getInt(Constants.NOTES_TYPE)));
+        startActivity(AddNoteActivity.intent(getActivity(), Constants.NOTES_LIFE));
     }
 
     @Override

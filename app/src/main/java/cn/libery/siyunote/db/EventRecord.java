@@ -70,8 +70,16 @@ public class EventRecord extends DataSupport {
         this.type = type;
     }
 
-    public static List<EventRecord> getAll() {
-        return DataSupport.select("*").order("timeStamp desc").find(EventRecord.class);
+    public static List<EventRecord> getAllNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 0").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getWorkNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 1").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getLifeNotes() {
+        return DataSupport.select("*").order("timeStamp desc").where("type = 2").find(EventRecord.class);
     }
 
     public static EventRecord getByTimeStamp(long timeStamp) {
@@ -82,7 +90,4 @@ public class EventRecord extends DataSupport {
         DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
     }
 
-    public static void updateRecord(long timeStamp) {
-
-    }
 }

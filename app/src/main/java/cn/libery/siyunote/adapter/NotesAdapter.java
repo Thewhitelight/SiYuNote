@@ -45,10 +45,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        if ("1".equals(records.get(position).getType())) {
+        if (records.get(position).getType() == 0) {
             holder.imageView.setBackgroundResource(R.color.colorAccent);
-        } else {
+        } else if (records.get(position).getType() == 1) {
             holder.imageView.setBackgroundResource(R.color.colorPrimary);
+        } else {
+            holder.imageView.setBackgroundResource(R.color.colorPrimaryDark);
         }
         holder.title.setText(records.get(position).getContent());
         holder.menu.setOnClickListener(new View.OnClickListener() {

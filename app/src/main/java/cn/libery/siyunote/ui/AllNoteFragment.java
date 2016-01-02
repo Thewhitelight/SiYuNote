@@ -40,7 +40,6 @@ public class AllNoteFragment extends Fragment {
 
     public static AllNoteFragment newInstance() {
         Bundle args = new Bundle();
-        args.putInt(Constants.NOTES_TYPE, 0);
         AllNoteFragment fragment = new AllNoteFragment();
         fragment.setArguments(args);
         return fragment;
@@ -64,7 +63,7 @@ public class AllNoteFragment extends Fragment {
     public void refreshRecord(RefreshOtto otto) {
         if (otto != null && otto.ismRefresh() && records != null && adapter != null && notes != null) {
             records.clear();
-            records = EventRecord.getAll();
+            records = EventRecord.getAllNotes();
             adapter.setRecords(records);
             notes.setAdapter(adapter);
         }
@@ -72,13 +71,13 @@ public class AllNoteFragment extends Fragment {
 
     @OnClick(R.id.fab)
     void addNote() {
-        startActivity(AddNoteActivity.intent(getActivity(), getArguments().getInt(Constants.NOTES_TYPE)));
+        startActivity(AddNoteActivity.intent(getActivity(), Constants.NOTES_ALL));
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        records = EventRecord.getAll();
+        records = EventRecord.getAllNotes();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
         adapter = new NotesAdapter();

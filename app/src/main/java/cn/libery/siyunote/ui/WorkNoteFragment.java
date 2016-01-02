@@ -40,7 +40,6 @@ public class WorkNoteFragment extends Fragment {
 
     public static WorkNoteFragment newInstance() {
         Bundle args = new Bundle();
-        args.putInt(Constants.NOTES_TYPE, 1);
         WorkNoteFragment fragment = new WorkNoteFragment();
         fragment.setArguments(args);
         return fragment;
@@ -54,14 +53,14 @@ public class WorkNoteFragment extends Fragment {
 
     @OnClick(R.id.fab)
     void addNote() {
-        startActivity(AddNoteActivity.intent(getActivity(), getArguments().getInt(Constants.NOTES_TYPE)));
+        startActivity(AddNoteActivity.intent(getActivity(), Constants.NOTES_WORK));
     }
 
     @Subscribe
     public void refreshRecord(RefreshOtto otto) {
         if (otto != null && otto.ismRefresh() && records != null && adapter != null && notes != null) {
             records.clear();
-            records = EventRecord.getAll();
+            records = EventRecord.getWorkNotes();
             adapter.setRecords(records);
             notes.setAdapter(adapter);
         }
@@ -78,7 +77,7 @@ public class WorkNoteFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        records = EventRecord.getAll();
+        records = EventRecord.getWorkNotes();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         notes.setLayoutManager(layoutManager);
         adapter = new NotesAdapter();
