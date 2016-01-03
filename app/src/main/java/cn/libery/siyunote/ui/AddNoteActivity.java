@@ -106,7 +106,7 @@ public class AddNoteActivity extends BaseActivity {
 
             String[] pics = eventRecord.getPictures().split(",");
 
-            if (pics.length > 0) {
+            if (pics.length > 0 && !TextUtils.isEmpty(pics[0])) {
                 ArrayList<String> urls = new ArrayList<>();
                 Collections.addAll(urls, pics);
                 photoView.setVisibility(View.VISIBLE);
@@ -280,7 +280,9 @@ public class AddNoteActivity extends BaseActivity {
         updateRecord.setTime(TimeUtils.getNowTime());
         updateRecord.setType(noteType);
         updateRecord.setContent(edtInput.getText().toString());
-        updateRecord.setPictures(getImgUrls());
+        if (!mPhotoPickWrapperList.isEmpty()) {
+            updateRecord.setPictures(getImgUrls());
+        }
         updateRecord.updateAll("timeStamp = ?", String.valueOf(timestamp));
     }
 
@@ -296,8 +298,14 @@ public class AddNoteActivity extends BaseActivity {
 
     private String getImgUrls() {
         String imgUrls = "";
+        boolean isFirst = true;
         for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
-            imgUrls += wrapper.getUriString() + ",";
+            if (isFirst) {
+                isFirst = false;
+                imgUrls += wrapper.getUriString();
+            } else {
+                imgUrls += ("," + wrapper.getUriString());
+            }
         }
         return imgUrls;
     }
