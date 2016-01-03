@@ -24,7 +24,6 @@ import java.util.Collections;
 import java.util.Random;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
@@ -35,6 +34,8 @@ import cn.libery.siyunote.otto.RefreshOtto;
 import cn.lightsky.infiniteindicator.InfiniteIndicatorLayout;
 import cn.lightsky.infiniteindicator.slideview.BaseSliderView;
 import cn.lightsky.infiniteindicator.slideview.DefaultSliderView;
+
+import static butterknife.ButterKnife.bind;
 
 /**
  * Created by Libery on 2015/12/4.
@@ -59,9 +60,7 @@ public class NoteDetailActivity extends BaseActivity {
     @Bind(R.id.note_edit)
     FloatingActionButton noteEdit;
     private long timeStamp;
-    private int position;
     private int random;
-    private EventRecord record;
 
     public static Intent intent(Context context, long timeStamp, int position) {
         return new Intents.Builder().setClass(context, NoteDetailActivity.class)
@@ -74,14 +73,15 @@ public class NoteDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_note);
-        ButterKnife.bind(this);
-        position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
+        bind(this);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
         }
         timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
+        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
+        collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
         random = new Random().nextInt(10);
     }
 
@@ -92,9 +92,7 @@ public class NoteDetailActivity extends BaseActivity {
     }
 
     private void iniData() {
-        record = EventRecord.getByTimeStamp(timeStamp);
-        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
-        collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
+        EventRecord record = EventRecord.getByTimeStamp(timeStamp);
         noteTime.setText(record.getTime());
         noteContent.setText(record.getContent());
         ArrayList<String> urls = new ArrayList<>();

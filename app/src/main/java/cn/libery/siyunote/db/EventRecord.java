@@ -71,15 +71,15 @@ public class EventRecord extends DataSupport {
     }
 
     public static List<EventRecord> getAllNotes() {
-        return DataSupport.select("*").order("timeStamp desc").where("type = 0").find(EventRecord.class);
+        return DataSupport.select("*").order("time desc").where("type = 0").find(EventRecord.class);
     }
 
     public static List<EventRecord> getWorkNotes() {
-        return DataSupport.select("*").order("timeStamp desc").where("type = 1").find(EventRecord.class);
+        return DataSupport.select("*").order("time desc").where("type = 1").find(EventRecord.class);
     }
 
     public static List<EventRecord> getLifeNotes() {
-        return DataSupport.select("*").order("timeStamp desc").where("type = 2").find(EventRecord.class);
+        return DataSupport.select("*").order("time desc").where("type = 2").find(EventRecord.class);
     }
 
     public static EventRecord getByTimeStamp(long timeStamp) {
