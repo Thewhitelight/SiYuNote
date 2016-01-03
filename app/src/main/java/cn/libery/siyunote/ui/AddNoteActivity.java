@@ -298,13 +298,9 @@ public class AddNoteActivity extends BaseActivity {
 
     private String getImgUrls() {
         String imgUrls = "";
-        boolean isFirst = true;
-        for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
-            if (isFirst) {
-                isFirst = false;
-                imgUrls += wrapper.getUriString();
-            } else {
-                imgUrls += ("," + wrapper.getUriString());
+        if (mPhotoPickWrapperList != null && mPhotoPickWrapperList.size() > 0) {
+            for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
+                imgUrls += wrapper.getUriString() + ",";
             }
         }
         return imgUrls;

@@ -60,9 +60,7 @@ public class NoteDetailActivity extends BaseActivity {
     @Bind(R.id.note_edit)
     FloatingActionButton noteEdit;
     private long timeStamp;
-    private int position;
     private int random;
-    private EventRecord record;
 
     public static Intent intent(Context context, long timeStamp, int position) {
         return new Intents.Builder().setClass(context, NoteDetailActivity.class)
@@ -76,13 +74,14 @@ public class NoteDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_note);
         bind(this);
-        position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
         }
         timeStamp = getIntent().getLongExtra(Constants.EXTRA_TIMESTAMP, 0);
+        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
+        collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
         random = new Random().nextInt(10);
     }
 
@@ -93,9 +92,7 @@ public class NoteDetailActivity extends BaseActivity {
     }
 
     private void iniData() {
-        record = EventRecord.getByTimeStamp(timeStamp);
-        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
-        collapsingToolbar.setTitle(getResources().getString(R.string.note_detail));
+        EventRecord record = EventRecord.getByTimeStamp(timeStamp);
         noteTime.setText(record.getTime());
         noteContent.setText(record.getContent());
         ArrayList<String> urls = new ArrayList<>();
