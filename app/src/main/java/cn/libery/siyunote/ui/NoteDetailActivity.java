@@ -24,7 +24,6 @@ import java.util.Collections;
 import java.util.Random;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.Intents;
@@ -35,6 +34,8 @@ import cn.libery.siyunote.otto.RefreshOtto;
 import cn.lightsky.infiniteindicator.InfiniteIndicatorLayout;
 import cn.lightsky.infiniteindicator.slideview.BaseSliderView;
 import cn.lightsky.infiniteindicator.slideview.DefaultSliderView;
+
+import static butterknife.ButterKnife.bind;
 
 /**
  * Created by Libery on 2015/12/4.
@@ -74,7 +75,7 @@ public class NoteDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_note);
-        ButterKnife.bind(this);
+        bind(this);
         position = getIntent().getIntExtra(Constants.VIEW_PAGER_POSITION, 0);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();

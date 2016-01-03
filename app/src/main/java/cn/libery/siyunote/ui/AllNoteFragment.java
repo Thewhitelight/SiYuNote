@@ -15,7 +15,6 @@ import com.squareup.otto.Subscribe;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.libery.siyunote.Constants;
 import cn.libery.siyunote.R;
@@ -23,6 +22,9 @@ import cn.libery.siyunote.adapter.NotesAdapter;
 import cn.libery.siyunote.db.EventRecord;
 import cn.libery.siyunote.otto.BusProvider;
 import cn.libery.siyunote.otto.RefreshOtto;
+
+import static butterknife.ButterKnife.bind;
+import static butterknife.ButterKnife.unbind;
 
 /**
  * Created by Libery on 2015/12/23.
@@ -55,7 +57,7 @@ public class AllNoteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
-        ButterKnife.bind(this, view);
+        bind(this, view);
         return view;
     }
 
@@ -95,7 +97,7 @@ public class AllNoteFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbind(this);
     }
 
     @Override

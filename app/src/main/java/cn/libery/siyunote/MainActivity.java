@@ -1,7 +1,5 @@
 package cn.libery.siyunote;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -22,10 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
+
+import static butterknife.ButterKnife.bind;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,20 +40,13 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.viewpager)
     ViewPager viewpager;
     private long firstBackPressedTime;
-    private int position;
     private Adapter adapter;
-
-    public static Intent intent(Context context, int position) {
-        return new Intents.Builder().setClass(context, MainActivity.class)
-                .add(Constants.VIEW_PAGER_POSITION, position)
-                .toIntent();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        bind(this);
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,11 +74,11 @@ public class MainActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewpager) {
         AllNoteFragment mAllNoteFragment = AllNoteFragment.newInstance();
-        adapter.addFragment(mAllNoteFragment, "全部");
+        adapter.addFragment(mAllNoteFragment, getString(R.string.action_all));
         WorkNoteFragment mWorkNoteFragment = WorkNoteFragment.newInstance();
-        adapter.addFragment(mWorkNoteFragment, "工作");
+        adapter.addFragment(mWorkNoteFragment, getString(R.string.action_work));
         LifeNoteFragment mLifeNoteFragment = LifeNoteFragment.newInstance();
-        adapter.addFragment(mLifeNoteFragment, "生活");
+        adapter.addFragment(mLifeNoteFragment, getString(R.string.action_life));
         viewpager.setAdapter(adapter);
     }
 
