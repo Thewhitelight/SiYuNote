@@ -106,7 +106,7 @@ public class AddNoteActivity extends BaseActivity {
 
             String[] pics = eventRecord.getPictures().split(",");
 
-            if (pics.length > 1) {
+            if (pics.length > 0) {
                 ArrayList<String> urls = new ArrayList<>();
                 Collections.addAll(urls, pics);
                 photoView.setVisibility(View.VISIBLE);
@@ -280,6 +280,7 @@ public class AddNoteActivity extends BaseActivity {
         updateRecord.setTime(TimeUtils.getNowTime());
         updateRecord.setType(noteType);
         updateRecord.setContent(edtInput.getText().toString());
+        updateRecord.setPictures(getImgUrls());
         updateRecord.updateAll("timeStamp = ?", String.valueOf(timestamp));
     }
 
@@ -289,12 +290,16 @@ public class AddNoteActivity extends BaseActivity {
         record.setContent(edtInput.getText().toString());
         record.setType(noteType);
         record.setTimeStamp(Calendar.getInstance().getTimeInMillis());
+        record.setPictures(getImgUrls());
+        record.save();
+    }
+
+    private String getImgUrls() {
         String imgUrls = "";
         for (PhotoPickWrapper wrapper : mPhotoPickWrapperList) {
             imgUrls += wrapper.getUriString() + ",";
         }
-        record.setPictures(imgUrls);
-        record.save();
+        return imgUrls;
     }
 
     @Override

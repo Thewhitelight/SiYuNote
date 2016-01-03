@@ -16,10 +16,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.squareup.otto.Subscribe;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.PagerPositionOtto;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bind(this);
+        BusProvider.getInstance().register(this);
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,6 +85,13 @@ public class MainActivity extends AppCompatActivity
         LifeNoteFragment mLifeNoteFragment = LifeNoteFragment.newInstance();
         adapter.addFragment(mLifeNoteFragment, getString(R.string.action_life));
         viewpager.setAdapter(adapter);
+    }
+
+    @Subscribe
+    public void setViewPagerPosition(PagerPositionOtto otto) {
+        if (otto != null) {
+            viewpager.setCurrentItem(otto.getPosition(), false);
+        }
     }
 
   /*  @OnClick(R.id.fab)
@@ -171,4 +183,11 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        BusProvider.getInstance().unregister(this);
+    }
+
 }
