@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.squareup.otto.Subscribe;
 
@@ -27,6 +26,7 @@ import cn.libery.siyunote.otto.PagerPositionOtto;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
+import cn.libery.siyunote.utils.ToastUtil;
 
 import static butterknife.ButterKnife.bind;
 
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             long secondBackPressedTime = System.currentTimeMillis();
             if (secondBackPressedTime - firstBackPressedTime > 2000) {
-                Toast.makeText(getApplicationContext(), "再按一次，退出应用", Toast.LENGTH_SHORT).show();
+                ToastUtil.showAtUI( "再按一次，退出应用");
                 firstBackPressedTime = secondBackPressedTime;
             } else {
                 finish();
