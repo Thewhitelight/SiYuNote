@@ -49,7 +49,6 @@ import cn.libery.siyunote.otto.BusProvider;
 import cn.libery.siyunote.otto.RefreshOtto;
 import cn.libery.siyunote.utils.AppUtils;
 import cn.libery.siyunote.utils.JsonParser;
-import cn.libery.siyunote.utils.LogUtil;
 import cn.libery.siyunote.utils.TimeUtils;
 import cn.libery.siyunote.utils.ToastUtil;
 import cn.libery.siyunote.widget.MultiPhotoPickView;
@@ -112,9 +111,6 @@ public class AddNoteActivity extends BaseActivity {
 
         setTitle(R.string.title_activity_add);
         initData();
-
-        // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
-        // 使用UI听写功能，请根据sdk文件目录下的notice.txt,放置布局文件和图片资源
         mIatDialog = new RecognizerDialog(this, mInitListener);
 
     }
@@ -126,7 +122,6 @@ public class AddNoteActivity extends BaseActivity {
 
         @Override
         public void onInit(int code) {
-            LogUtil.d("SpeechRecognizer init() code = " + code);
             if (code != ErrorCode.SUCCESS) {
                 showTip("初始化失败，错误码：" + code);
             }
@@ -142,7 +137,6 @@ public class AddNoteActivity extends BaseActivity {
         String text = JsonParser.parseIatResult(results.getResultString());
 
         String sn = null;
-        // 读取json结果中的sn字段
         try {
             JSONObject resultJson = new JSONObject(results.getResultString());
             sn = resultJson.optString("sn");
