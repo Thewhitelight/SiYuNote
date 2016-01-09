@@ -15,9 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:src="@android:drawable/ic_dialog_email"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_action_add_light"
         fab:fab_colorNormal="@color/colorPrimary"
         fab:fab_colorPressed="@color/colorPrimaryDark" />
 

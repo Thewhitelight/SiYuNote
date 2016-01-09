@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+import cn.libery.siyunote.Constants;
+
 /**
  * Created by Libery on 2015/11/29.
  * Email:libery.szq@qq.com
@@ -21,6 +23,12 @@ public class AppUtils {
         return packInfo;
     }
 
+    /**
+     * 首次启动主页
+     */
+    public static boolean isFirstStartMain() {
+        return SharedPreferUtil.get(Constants.FIRST_START_MAIN);
+    }
 
     public static String getNoteType(int noteType) {
         String noteTypeStr = "";
@@ -36,5 +44,12 @@ public class AppUtils {
                 break;
         }
         return noteTypeStr;
+    }
+
+    /**
+     * recyclerView type is LIST_LINEAR
+     */
+    public static boolean isListLinear() {
+        return SharedPreferUtil.get(Constants.LIST_TYPE, Constants.LIST_LINEAR).equals(Constants.LIST_LINEAR);
     }
 }

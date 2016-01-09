@@ -1,7 +1,10 @@
 package cn.libery.siyunote;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -22,11 +25,14 @@ import java.util.List;
 
 import butterknife.Bind;
 import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.ListTypeOtto;
 import cn.libery.siyunote.otto.PagerPositionOtto;
+import cn.libery.siyunote.ui.AboutActivity;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
-import cn.libery.siyunote.utils.ToastUtil;
+import cn.libery.siyunote.utils.AppUtils;
+import cn.libery.siyunote.utils.SharedPreferUtil;
 
 import static butterknife.ButterKnife.bind;
 
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity
     ViewPager viewpager;
     private long firstBackPressedTime;
     private Adapter adapter;
+    private boolean listType = AppUtils.isListLinear();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +60,10 @@ public class MainActivity extends AppCompatActivity
         bind(this);
         BusProvider.getInstance().register(this);
         setSupportActionBar(toolbar);
-
+        if (AppUtils.isFirstStartMain()) {
+            SharedPreferUtil.put(Constants.FIRST_START_MAIN, false);
+            SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_LINEAR);
+        }
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
@@ -110,6 +120,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_settings) {
+            if (listType) {
+                listType = false;
+                SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_GRID);
+                BusProvider.getInstance().post(new ListTypeOtto(Constants.LIST_GRID));
+            } else {
+                listType = true;
+                SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_LINEAR);
+                BusProvider.getInstance().post(new ListTypeOtto(Constants.LIST_LINEAR));
+            }
             return true;
         }
 
@@ -122,22 +141,28 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camara) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+        if (id == R.id.nav_manage) {
+            Uri uri = Uri.parse("mailto:921618920@qq.com");
+            Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+            intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name) + BuildConfig.VERSION_NAME + getString(R.string.feedback));
+            startActivity(intent);
+        } else if (id == R.id.nav_about) {
+            startActivity(new Intent(this, AboutActivity.class));
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            share();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void share() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text, getString(R.string.app_down_url), BuildConfig.APP_DOWNLOAD_URL));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(Intent.createChooser(intent, getString(R.string.share)));
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -176,7 +201,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             long secondBackPressedTime = System.currentTimeMillis();
             if (secondBackPressedTime - firstBackPressedTime > 2000) {
-                ToastUtil.showAtUI( "再按一次，退出应用");
+                Snackbar.make(tabs, "再按一次，退出应用", Snackbar.LENGTH_LONG).show();
                 firstBackPressedTime = secondBackPressedTime;
             } else {
                 finish();

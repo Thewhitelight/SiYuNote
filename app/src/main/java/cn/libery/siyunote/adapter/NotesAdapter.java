@@ -1,16 +1,20 @@
 package cn.libery.siyunote.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.List;
 
 import cn.libery.siyunote.R;
 import cn.libery.siyunote.db.EventRecord;
+import cn.libery.siyunote.utils.ImageLoaderOptions;
 
 /**
  * Created by Libery on 2015/12/3.
@@ -52,13 +56,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
         } else {
             holder.imageView.setBackgroundResource(R.color.colorPrimaryDark);
         }
+        if (!TextUtils.isEmpty(records.get(position).getPictures())) {
+            holder.pictures.setImageResource(R.drawable.ic_picture);
+            ImageLoader.getInstance().displayImage(records.get(position).getPictures().split(",")[0], holder.pictures, ImageLoaderOptions.getOptions());
+        } else {
+            holder.pictures.setBackgroundDrawable(null);
+        }
         holder.title.setText(records.get(position).getContent());
-        holder.menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     @Override
@@ -70,14 +74,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ItemViewHold
 
         public ImageView imageView;
         public TextView title;
-        public TextView menu;
+        public ImageView pictures;
         private OnItemClickListener onItemClickListener;
 
         public ItemViewHolder(View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.note_type);
             title = (TextView) itemView.findViewById(R.id.note_title);
-            menu = (TextView) itemView.findViewById(R.id.note_menu);
+            pictures = (ImageView) itemView.findViewById(R.id.note_pictures);
             this.onItemClickListener = onItemClickListener;
             itemView.setOnClickListener(this);
         }
