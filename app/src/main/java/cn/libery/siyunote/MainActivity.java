@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_manage) {
-            Uri uri = Uri.parse("mailto:921618920@qq.com");
+            Uri uri = Uri.parse("mailto:442350442@qq.com");
             Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
             intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name) + BuildConfig.VERSION_NAME + getString(R.string.feedback));
             startActivity(intent);
