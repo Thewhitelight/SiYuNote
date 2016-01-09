@@ -3,6 +3,7 @@ package cn.libery.siyunote.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -88,6 +89,7 @@ public class AllNoteFragment extends Fragment {
 
         adapter = new NotesAdapter();
         adapter.setRecords(records);
+        notes.setItemAnimator(new DefaultItemAnimator());
         notes.setAdapter(adapter);
         adapter.setOnItemClickListener(new NotesAdapter.OnItemClickListener() {
             @Override
