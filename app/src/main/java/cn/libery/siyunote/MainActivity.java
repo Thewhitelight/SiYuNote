@@ -23,11 +23,14 @@ import java.util.List;
 
 import butterknife.Bind;
 import cn.libery.siyunote.otto.BusProvider;
+import cn.libery.siyunote.otto.ListTypeOtto;
 import cn.libery.siyunote.otto.PagerPositionOtto;
 import cn.libery.siyunote.ui.AboutActivity;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
+import cn.libery.siyunote.utils.AppUtils;
+import cn.libery.siyunote.utils.SharedPreferUtil;
 import cn.libery.siyunote.utils.ToastUtil;
 
 import static butterknife.ButterKnife.bind;
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity
     ViewPager viewpager;
     private long firstBackPressedTime;
     private Adapter adapter;
+    private boolean listType = AppUtils.isListLinear();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,10 @@ public class MainActivity extends AppCompatActivity
         bind(this);
         BusProvider.getInstance().register(this);
         setSupportActionBar(toolbar);
-
+        if (AppUtils.isFirstStartMain()) {
+            SharedPreferUtil.put(Constants.FIRST_START_MAIN, false);
+            SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_LINEAR);
+        }
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
@@ -112,6 +119,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_settings) {
+            if (listType) {
+                listType = false;
+                SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_GRID);
+                BusProvider.getInstance().post(new ListTypeOtto(Constants.LIST_GRID));
+            } else {
+                listType = true;
+                SharedPreferUtil.put(Constants.LIST_TYPE, Constants.LIST_LINEAR);
+                BusProvider.getInstance().post(new ListTypeOtto(Constants.LIST_LINEAR));
+            }
             return true;
         }
 
@@ -146,9 +162,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share));
-        intent.putExtra(Intent.EXTRA_TEXT,  getString(R.string.share_text, getString(R.string.app_down_url), BuildConfig.APP_DOWNLOAD_URL));
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text, getString(R.string.app_down_url), BuildConfig.APP_DOWNLOAD_URL));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(Intent.createChooser(intent,getString(R.string.share)));
+        startActivity(Intent.createChooser(intent, getString(R.string.share)));
     }
 
     static class Adapter extends FragmentPagerAdapter {

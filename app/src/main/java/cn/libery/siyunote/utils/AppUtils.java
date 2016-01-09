@@ -1,9 +1,10 @@
 package cn.libery.siyunote.utils;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+
+import cn.libery.siyunote.Constants;
 
 /**
  * Created by Libery on 2015/11/29.
@@ -22,16 +23,11 @@ public class AppUtils {
         return packInfo;
     }
 
-    public static <T> T getMetaData(Context context, String name) {
-        try {
-            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            if (ai.metaData != null) {
-                return (T) ai.metaData.get(name);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    /**
+     * 首次启动主页
+     */
+    public static boolean isFirstStartMain() {
+        return SharedPreferUtil.get(Constants.FIRST_START_MAIN);
     }
 
     public static String getNoteType(int noteType) {
@@ -48,5 +44,12 @@ public class AppUtils {
                 break;
         }
         return noteTypeStr;
+    }
+
+    /**
+     * recyclerView type is LIST_LINEAR
+     */
+    public static boolean isListLinear() {
+        return SharedPreferUtil.get(Constants.LIST_TYPE, Constants.LIST_LINEAR).equals(Constants.LIST_LINEAR);
     }
 }
