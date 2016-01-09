@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_main" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:scrollingCache="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="120dp"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/abc_text_size_display_1_material" />
+
+            <TextView
+                android:id="@+id/version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/abc_text_size_medium_material" />
+
+
+            <Button
+                android:id="@+id/project_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="120dp"
+                android:background="@color/white"
+                android:text="@string/project_home"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/abc_text_size_button_material" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/about_bottom_text"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

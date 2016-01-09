@@ -1,5 +1,6 @@
 package cn.libery.siyunote;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -23,6 +24,7 @@ import java.util.List;
 import butterknife.Bind;
 import cn.libery.siyunote.otto.BusProvider;
 import cn.libery.siyunote.otto.PagerPositionOtto;
+import cn.libery.siyunote.ui.AboutActivity;
 import cn.libery.siyunote.ui.AllNoteFragment;
 import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
@@ -130,14 +132,23 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
+        } else if (id == R.id.nav_about) {
+            startActivity(new Intent(this, AboutActivity.class));
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            share();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void share() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share));
+        intent.putExtra(Intent.EXTRA_TEXT,  getString(R.string.share_text, getString(R.string.app_down_url), BuildConfig.APP_DOWNLOAD_URL));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(Intent.createChooser(intent,getString(R.string.share)));
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -176,7 +187,7 @@ public class MainActivity extends AppCompatActivity
         } else {
             long secondBackPressedTime = System.currentTimeMillis();
             if (secondBackPressedTime - firstBackPressedTime > 2000) {
-                ToastUtil.showAtUI( "再按一次，退出应用");
+                ToastUtil.showAtUI("再按一次，退出应用");
                 firstBackPressedTime = secondBackPressedTime;
             } else {
                 finish();

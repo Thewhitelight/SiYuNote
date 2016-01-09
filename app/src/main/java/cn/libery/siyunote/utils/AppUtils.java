@@ -1,6 +1,7 @@
 package cn.libery.siyunote.utils;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
@@ -21,6 +22,17 @@ public class AppUtils {
         return packInfo;
     }
 
+    public static <T> T getMetaData(Context context, String name) {
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            if (ai.metaData != null) {
+                return (T) ai.metaData.get(name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public static String getNoteType(int noteType) {
         String noteTypeStr = "";

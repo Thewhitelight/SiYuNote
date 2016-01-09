@@ -14,5 +14,10 @@
     <string name="action_work">工作</string>
     <string name="action_life">生活</string>
     <string name="iflytek_id">565b0256</string>
-
+    <string name="about">关于</string>
+    <string name="share">分享到</string>
+    <string name="share_text" formatted="false">思宇便签，简单、快捷 %s\u0020%s</string>
+    <string name="app_down_url">下载地址</string>
+    <string name="project_home">项目主页</string>
+    <string name="about_bottom_text" formatted="false">Copyright © 2016 Libery. \n All Rights Reserved.</string>
 </resources>
