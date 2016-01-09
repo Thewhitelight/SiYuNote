@@ -20,4 +20,5 @@
     <string name="app_down_url">下载地址</string>
     <string name="project_home">项目主页</string>
     <string name="about_bottom_text" formatted="false">Copyright © 2016 Libery. \n All Rights Reserved.</string>
+    <string name="feedback">意见反馈</string>
 </resources>
