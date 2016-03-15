@@ -28,9 +28,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="change icon">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java" />
+    <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SiYuNote.iws" />
@@ -78,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddNoteActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddNoteActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22077923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
               <folding>
                 <element signature="e#3791#3818#0" expanded="true" />
@@ -107,6 +106,16 @@
                 <element signature="method#getImgUrls#0;class#AddNoteActivity#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#AddNoteActivity#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2620321">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -3400,7 +3409,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_notes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_note.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/AppUtils.java" />
@@ -3411,6 +3419,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -3466,7 +3475,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -4066,7 +4075,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458043023124</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add permission">
+      <created>1458044324584</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1458044324584</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView">
@@ -4091,8 +4106,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35834268" sideWeight="0.5519272" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35834268" sideWeight="0.4480728" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33370662" sideWeight="0.44860813" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35834268" sideWeight="0.4480728" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33370662" sideWeight="0.44860813" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32362822" sideWeight="0.4598501" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.49358973" order="3" side_tool="false" content_ui="tabs" />
@@ -4148,7 +4163,8 @@
     <MESSAGE value="UPDATE" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="change icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="change icon" />
+    <MESSAGE value="add permission" />
+    <option name="LAST_COMMIT_MESSAGE" value="add permission" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4370,14 +4386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19557625">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v23/values-v23.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.075675674">
@@ -4533,7 +4541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22077923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
           <folding>
             <element signature="e#3791#3818#0" expanded="true" />
@@ -4559,6 +4567,14 @@
             <element signature="method#getImgUrls#0;class#AddNoteActivity#0" expanded="false" />
             <element signature="method#onDestroy#0;class#AddNoteActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2620321">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
