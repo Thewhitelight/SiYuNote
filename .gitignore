@@ -6,3 +6,4 @@
 /captures
 **/build
 .idea/workspace.xml
+ .app/key.jks
