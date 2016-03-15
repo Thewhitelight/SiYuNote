@@ -3,8 +3,11 @@ package cn.libery.siyunote.ui;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -53,6 +56,7 @@ import cn.libery.siyunote.utils.TimeUtils;
 import cn.libery.siyunote.utils.ToastUtil;
 import cn.libery.siyunote.widget.MultiPhotoPickView;
 
+import static android.Manifest.permission.RECORD_AUDIO;
 import static butterknife.ButterKnife.bind;
 import static butterknife.ButterKnife.unbind;
 
@@ -112,7 +116,21 @@ public class AddNoteActivity extends BaseActivity {
         setTitle(R.string.title_activity_add);
         initData();
         mIatDialog = new RecognizerDialog(this, mInitListener);
+        if (ContextCompat.checkSelfPermission(this, RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            //申请WRITE_EXTERNAL_STORAGE权限
+            ActivityCompat.requestPermissions(this, new String[]{RECORD_AUDIO}, 1);
+        }
+    }
 
+    @Override
+    public void onRequestPermissionsResult(final int requestCode, final String[] permissions, final int[]
+            grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                ToastUtil.showAtUI("请在APP设置页面打开相应权限");
+            }
+        }
     }
 
     /**
