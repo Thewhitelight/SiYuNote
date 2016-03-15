@@ -34,7 +34,7 @@ public class AppUtils {
         String noteTypeStr = "";
         switch (noteType) {
             case 0:
-                noteTypeStr = "全部";
+                noteTypeStr = "灵感";
                 break;
             case 1:
                 noteTypeStr = "工作";

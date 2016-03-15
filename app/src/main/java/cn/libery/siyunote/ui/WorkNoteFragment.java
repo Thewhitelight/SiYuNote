@@ -3,9 +3,9 @@ package cn.libery.siyunote.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,7 +97,8 @@ public class WorkNoteFragment extends Fragment {
         adapter.setOnItemClickListener(new NotesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                startActivity(NoteDetailActivity.intent(getActivity(), records.get(position).getTimeStamp(), Constants.NOTES_WORK));
+                startActivity(NoteDetailActivity.intent(getActivity(), records.get(position).getTimeStamp(),
+                        Constants.NOTES_WORK));
             }
         });
         fab.attachToRecyclerView(notes);
@@ -118,11 +119,11 @@ public class WorkNoteFragment extends Fragment {
     private void setListType(boolean type) {
         if (notes != null) {
             if (type) {
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager
+                        .VERTICAL, false);
                 notes.setLayoutManager(linearLayoutManager);
             } else {
-                GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
-                notes.setLayoutManager(gridLayoutManager);
+                notes.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
             }
         }
     }
