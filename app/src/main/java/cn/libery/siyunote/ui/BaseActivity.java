@@ -12,6 +12,10 @@ import cn.libery.siyunote.R;
  */
 public class BaseActivity extends AppCompatActivity {
 
+    public void setTitle(int title) {
+        setTitle(getString(title));
+    }
+
     public void setTitle(String title) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
@@ -23,12 +27,6 @@ public class BaseActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-    }
-
-    public void setTitle(int title) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(title);
-        setActionBar(toolbar);
     }
 
     public void onToolbarBackPressed() {

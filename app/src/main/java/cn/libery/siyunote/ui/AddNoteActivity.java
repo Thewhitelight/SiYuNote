@@ -117,7 +117,6 @@ public class AddNoteActivity extends BaseActivity {
         initData();
         mIatDialog = new RecognizerDialog(this, mInitListener);
         if (ContextCompat.checkSelfPermission(this, RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            //申请WRITE_EXTERNAL_STORAGE权限
             ActivityCompat.requestPermissions(this, new String[]{RECORD_AUDIO}, 1);
         }
     }
