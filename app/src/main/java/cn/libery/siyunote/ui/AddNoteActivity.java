@@ -150,7 +150,7 @@ public class AddNoteActivity extends BaseActivity {
         ToastUtil.showAtUI(str);
     }
 
-    private void printResult(RecognizerResult results) {
+    private void printResult(RecognizerResult results, boolean isLast) {
         String text = JsonParser.parseIatResult(results.getResultString());
 
         String sn = null;
@@ -164,12 +164,13 @@ public class AddNoteActivity extends BaseActivity {
         mIatResults.put(sn, text);
 
         StringBuilder resultBuilder = new StringBuilder();
-        for (String key : mIatResults.keySet()) {
-            resultBuilder.append(mIatResults.get(key));
+        if (isLast) {
+            for (String key : mIatResults.keySet()) {
+                resultBuilder.append(mIatResults.get(key));
+            }
+            edtInput.setText(edtInput.getText() + resultBuilder.toString());
+            edtInput.setSelection(edtInput.length());
         }
-
-        edtInput.append(resultBuilder.toString());
-        edtInput.setSelection(edtInput.length());
     }
 
     /**
@@ -177,7 +178,7 @@ public class AddNoteActivity extends BaseActivity {
      */
     private RecognizerDialogListener mRecognizerDialogListener = new RecognizerDialogListener() {
         public void onResult(RecognizerResult results, boolean isLast) {
-            printResult(results);
+            printResult(results, isLast);
         }
 
         /**
