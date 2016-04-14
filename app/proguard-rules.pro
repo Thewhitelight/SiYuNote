@@ -33,3 +33,29 @@
 #科大讯飞
 -keep class com.iflytek.**{*;}
 
+# -- ButterKnife Start --
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+# -- ButterKnife End --
+
+#-- Litepal Start--
+-dontwarn org.litepal.**
+-keep enum org.litepal.**
+-keep interface org.litepal.** { *; }
+-keep public class * extends org.litepal.**
+-keepattributes *Annotation*
+-keepclassmembers enum * {
+     public static **[] values();
+     public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * extends org.litepal.crud.DataSupport{*;}
+#-- Litepal End--

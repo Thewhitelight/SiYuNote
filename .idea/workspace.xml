@@ -2,43 +2,31 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config>
-        <target>android-23</target>
-      </config>
+      <config />
     </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
-        <config>
-          <theme>@android:style/Theme.Material.Light</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
-        <config>
-          <theme>@android:style/Theme.Material.Light</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/select_note_type.xml">
-        <config>
-          <theme>@android:style/Theme.Material.Light</theme>
-        </config>
-      </layout>
-    </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="">
+    <list default="true" id="361d0e0f-3390-46ff-be77-b347dbe3a372" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/app-release.apk" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
     </list>
     <ignored path="SiYuNote.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="app/app.iml" />
-    <ignored path="SiYuNote.iml" />
-    <ignored path="app/key.jks" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,70 +39,58 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state />
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="SiYuNote" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/BaseActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63286716">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="66" column="35" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
-                <element signature="e#1002#1003#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Process.java" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Android/sources/android-23/android/os/Process.java">
+      <file leaf-file-name="proguard-rules.pro" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6235955">
+              <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="763" column="28" selection-start-line="763" selection-start-column="28" selection-end-line="763" selection-end-column="28" />
-              <folding>
-                <element signature="e#26662#26663#0" expanded="true" />
-                <element signature="e#26696#26697#0" expanded="true" />
-              </folding>
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllNoteFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AllNoteFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="resourceFile" />
-        <option value="layoutResourceFile_vertical" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="D:\SiYuNote\app\key.jks" />
-    <option name="KEY_ALIAS" value="szq" />
-  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="82ced36f66179c02c0cfdaa9d479590cf8d32810" />
-      </map>
-    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -623,9 +599,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare org.litepal.android:core:1.3.0" />
+                <option name="description" value="Prepare org.litepal.android:core:1.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareOrgLitepalAndroidCore130Library" />
+                <option name="name" value="prepareOrgLitepalAndroidCore131Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1325,9 +1301,9 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare org.litepal.android:core:1.3.0" />
+                <option name="description" value="Prepare org.litepal.android:core:1.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareOrgLitepalAndroidCore130Library" />
+                <option name="name" value="prepareOrgLitepalAndroidCore131Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2734,54 +2710,104 @@
         <entry key="$USER_HOME$/Desktop/DatePicker" value="5746079913690" />
         <entry key="$USER_HOME$/Desktop/WeightCalculator" value="4304162480000" />
         <entry key="$USER_HOME$/Documents/WanyiDate" value="4311056230000" />
+        <entry key="D:/AlarmManager" value="4356416653059" />
         <entry key="D:/AndroidStudio/SwipeRefreshLayout" value="4307010458159" />
+        <entry key="D:/BottomSheet" value="5807917019180" />
+        <entry key="D:/CaiBao-android" value="4377390567054" />
+        <entry key="D:/CodeManager/CodeManager" value="4360295462688" />
+        <entry key="D:/DatePicker" value="5830730743767" />
         <entry key="D:/Demo/AlarmClock" value="4336209173083" />
+        <entry key="D:/Demo/AlarmManager" value="4356181254659" />
         <entry key="D:/Demo/Android Studio/ActiveAndroidDemo" value="4313926636956" />
         <entry key="D:/Demo/Android Studio/AlarmDemo" value="4323018222399" />
         <entry key="D:/Demo/Android Studio/AlarmManagerService" value="4313926265431" />
         <entry key="D:/Demo/Android Studio/Calender" value="4313936023710" />
+        <entry key="D:/Demo/Android Studio/FrescoDemo" value="4313926269521" />
         <entry key="D:/Demo/Android Studio/GetPhoneInfo" value="4313926269985" />
         <entry key="D:/Demo/Android Studio/How-Old" value="4313926271476" />
         <entry key="D:/Demo/Android Studio/MultiPhotoPick" value="5780086107107" />
         <entry key="D:/Demo/Android Studio/ReuseAdapter" value="4313926273589" />
         <entry key="D:/Demo/Android Studio/ScrollStateListView" value="4328943693152" />
         <entry key="D:/Demo/Android Studio/SwipeRefreshLayout" value="4313926276555" />
+        <entry key="D:/Demo/Android-Cloud-TagView-Plus" value="5813901011452" />
+        <entry key="D:/Demo/Android-Iconics" value="18837257220501" />
         <entry key="D:/Demo/Android-ItemTouchHelper-Demo" value="4313998675080" />
+        <entry key="D:/Demo/Android-LunarView" value="7256975626735" />
         <entry key="D:/Demo/Android-ObservableScrollView-master" value="8625159972000" />
         <entry key="D:/Demo/Android-PickerView" value="5756386469517" />
         <entry key="D:/Demo/Android-Week-View" value="5784468713439" />
+        <entry key="D:/Demo/AndroidFluxPractice" value="4378164495657" />
         <entry key="D:/Demo/AutoLoadListView" value="4329267785428" />
         <entry key="D:/Demo/CNode-Material-Design" value="5756769921184" />
-        <entry key="D:/Demo/Coding-Android" value="7218945366187" />
+        <entry key="D:/Demo/Calendar/CompactCalendarView" value="5787172785011" />
+        <entry key="D:/Demo/Calendar/FlexibleCalendar" value="7233957464923" />
+        <entry key="D:/Demo/Calendar/MaterialCalendar" value="4340185094435" />
+        <entry key="D:/Demo/Calendar/MaterialCalendarView" value="5786918079596" />
+        <entry key="D:/Demo/Calendar/RWeekCalendar/RamzCalSample" value="5786917896261" />
+        <entry key="D:/Demo/CodeManager" value="4360295462688" />
+        <entry key="D:/Demo/Coding-Android" value="8699344969351" />
         <entry key="D:/Demo/DatePicker" value="5762942485597" />
+        <entry key="D:/Demo/FilveFlavours" value="2896884986148" />
+        <entry key="D:/Demo/FloatingActionButton" value="5793315561570" />
         <entry key="D:/Demo/Flock" value="4338355444858" />
         <entry key="D:/Demo/FrescoDemo" value="4320709790277" />
+        <entry key="D:/Demo/GenerousRecyclerView" value="4363202869367" />
+        <entry key="D:/Demo/HashTagEditText" value="5813835223352" />
         <entry key="D:/Demo/InstaMaterial" value="4328651852715" />
+        <entry key="D:/Demo/JakeWharton-Scalpel-Sample" value="4347100825405" />
         <entry key="D:/Demo/KJGallery/KJGallery" value="5782065333997" />
+        <entry key="D:/Demo/Knife" value="5800924640800" />
         <entry key="D:/Demo/Material-Animations" value="4335418442840" />
         <entry key="D:/Demo/MaterialDateRangePicker" value="5771943982850" />
         <entry key="D:/Demo/MaterialTransitions" value="4317283681089" />
+        <entry key="D:/Demo/Meizhi" value="8745440318809" />
+        <entry key="D:/Demo/MemoryLeaksDemo" value="4354419457974" />
         <entry key="D:/Demo/MutiPhotoChoser" value="5758174690953" />
+        <entry key="D:/Demo/NestedScrollView" value="4345280848113" />
+        <entry key="D:/Demo/PatternLock" value="5793097082661" />
         <entry key="D:/Demo/PhotoView" value="5780950189579" />
+        <entry key="D:/Demo/RxJava-Android-Samples" value="4380566459864" />
+        <entry key="D:/Demo/RxJavaSamples" value="4381556982183" />
+        <entry key="D:/Demo/RxZhihuPager" value="4375656333532" />
+        <entry key="D:/Demo/RxjavaRetrofitDemo" value="4376170452948" />
+        <entry key="D:/Demo/ScanCode" value="4370413275713" />
+        <entry key="D:/Demo/SeeWeather" value="4375650914176" />
         <entry key="D:/Demo/SwipeRefreshLoadDemo" value="4329267106966" />
+        <entry key="D:/Demo/TagEditText" value="4360367625930" />
+        <entry key="D:/Demo/Visualiser" value="4363390897015" />
+        <entry key="D:/Demo/VoiceManager" value="4355449104344" />
         <entry key="D:/Demo/WanyiDate" value="7209285449382" />
+        <entry key="D:/Demo/android-ClipboardManagerCompat" value="7259870661161" />
+        <entry key="D:/Demo/android-RuntimePermissions" value="4354134883695" />
         <entry key="D:/Demo/android-app" value="5779969729363" />
+        <entry key="D:/Demo/android-collapse-calendar-view" value="7214605530119" />
+        <entry key="D:/Demo/android-lockpattern" value="4345375564203" />
+        <entry key="D:/Demo/android-recyclerview" value="4348721022533" />
         <entry key="D:/Demo/android-topeka" value="4314394402146" />
+        <entry key="D:/Demo/bottomsheet" value="7259893595184" />
         <entry key="D:/Demo/calendar-widget/app/calendar-widget" value="1441934048602" />
+        <entry key="D:/Demo/cheesesquare" value="4339059996758" />
         <entry key="D:/Demo/datetimepicker" value="5757602945190" />
-        <entry key="D:/Demo/material-calendarview" value="5782385997174" />
+        <entry key="D:/Demo/material-calendarview" value="4363238743646" />
+        <entry key="D:/Demo/overscroll-decor" value="5797240557667" />
+        <entry key="D:/Demo/richeditor-android" value="10143452114989" />
+        <entry key="D:/Demo/rxandroidexamples" value="4381338954350" />
         <entry key="D:/Documents/WanyiDate" value="4310600804915" />
         <entry key="D:/Documents/calender/Calender" value="4309278416023" />
-        <entry key="$PROJECT_DIR$" value="7270465166135" />
-        <entry key="D:/WanyiDate" value="8671282358118" />
+        <entry key="D:/HeartBeat" value="4347969451934" />
+        <entry key="D:/Notes" value="8711998067361" />
+        <entry key="$PROJECT_DIR$" value="7273054687355" />
+        <entry key="D:/WanyiDate" value="11682935801045" />
         <entry key="D:/calender/Calender" value="4311621096099" />
-        <entry key="D:\SiYuNote" value="7259073060861" />
+        <entry key="D:/easemob-sdk-2.2.4/examples/ChatDemoUI" value="1447412928000" />
+        <entry key="D:/plaid" value="5806241417326" />
         <entry key="E:/Android Studio/AndroidStudio/ActiveAndroidDemo" value="4312092065686" />
         <entry key="E:/Android Studio/AndroidStudio/Calender" value="4309278416023" />
         <entry key="E:/Android Studio/AndroidStudio/How-Old" value="4308467773645" />
         <entry key="E:/AndroidStudio/AndroidStudio/RippleView" value="4306955448105" />
         <entry key="E:/AndroidStudio/AndroidStudio/Snackbar" value="4306955448444" />
         <entry key="E:/AndroidStudio/AndroidStudio/SwipeRefreshLayout" value="4306518310000" />
+        <entry key="E:/Calendar" value="4379780540406" />
         <entry key="E:/Date/WYCalendar" value="4308701067243" />
         <entry key="E:/Date/WanyiDate" value="4308704901782" />
         <entry key="E:/Github Demo/ChatDemoUI" value="4311115444136" />
@@ -2792,6 +2818,8 @@
         <entry key="E:/Github Demo/cheesesquare" value="4310265598048" />
         <entry key="E:/Github Demo/material-calendarview" value="5745648364309" />
         <entry key="E:/WanyiDate" value="4309471412121" />
+        <entry key="F:/Calendar" value="4379232142550" />
+        <entry key="F:/caibao-android" value="5836968698608" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2982,7 +3010,7 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/otto/1.3.5/7941cd2c2c8ec006800d75c35f8a9dacf892ab93/otto-1.3.5.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.litepal.android/core/1.3.0/fc35c1cb16160551a2c749905d6d338bf6a300d2/core-1.3.0.aar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.litepal.android/core/1.3.1/bbf21de00079eba1e6abca7d87d6f2f0d91d13bb/core-1.3.1.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.melnykov/floatingactionbutton/1.3.0/c28a6453b8e47eeb0764f649b90cdd67f39c1893/floatingactionbutton-1.3.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.commit451/PhotoView/1.2.4/49fca6160953556d0691fe3aac7047ca66e61a06/PhotoView-1.2.4.aar" />
                             <option value="D:/Android/extras/android/m2repository/com/android/support/cardview-v7/23.1.1/cardview-v7-23.1.1.aar" />
@@ -3324,64 +3352,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/Main2Activity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/NotesFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/Main2Activity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_note.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
-        <option value="$PROJECT_DIR$/.idea/gradle.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/db/EventRecord.java" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/ToastUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/JsonParser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/LogUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/FucUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MyApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AboutActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/SharedPreferUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/otto/ListTypeOtto.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/adapter/NotesAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_notes.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_note.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/AppUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AllNoteFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/LifeNoteFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/WorkNoteFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/NoteDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/proguard-rules.pro" />
       </list>
     </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -3389,40 +3364,18 @@
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Probable bugsJava</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>ConstantConditions</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -3436,156 +3389,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siyunote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siyunote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3604,86 +3408,11 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siyunote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiYuNote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siyunote" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3697,39 +3426,12 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="last_opened_file_path" value="D:/CaiBao-android" />
-    <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="CVH7N16109000216" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
-    <property name="ExportApk.ApkPath" value="D:\SiYuNote\app" />
-    <property name="ExportApk.Flavors" value="" />
-    <property name="ExportApk.BuildType" value="release" />
-    <property name="device.picker.selection" value="533172aa" />
-  </component>
-  <component name="RecentsManager">
-    <key name="android.template.packageName">
-      <recent name="cn.libery.siyunote.ui" />
-      <recent name="cn.libery.siyunote" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SiYuNote\app\src\main\res\mipmap-xxhdpi" />
-      <recent name="D:\SiYuNote\app\src\main\res\drawable-xxhdpi" />
-      <recent name="D:\SiYuNote\app\libs" />
-      <recent name="D:\SiYuNote\app\src\main\jniLibs" />
-      <recent name="D:\SiYuNote\app\src\main\jinLibs" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.libery.siyunote.utils" />
-    </key>
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/libexec/git-core/git.exe" />
+    <property name="device.picker.selection" value="CVH7N16109000216" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -3739,7 +3441,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
@@ -3748,7 +3450,7 @@
       <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <Native>
         <option name="WORKING_DIR" value="" />
@@ -3774,7 +3476,7 @@
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
@@ -3783,7 +3485,7 @@
       <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <Native>
         <option name="WORKING_DIR" value="" />
@@ -3825,11 +3527,11 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <envs />
       <patterns />
@@ -3838,8 +3540,45 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
       <envs />
       <method />
     </configuration>
@@ -3864,13 +3603,41 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
@@ -3895,7 +3662,7 @@
       <option name="DEBUGGER_TYPE" value="Java" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <Native>
         <option name="WORKING_DIR" value="" />
@@ -3928,312 +3695,43 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0867da00-2a96-44a9-893a-c32e86e295ab" name="Default" comment="" />
-      <created>1446272389559</created>
+      <changelist id="361d0e0f-3390-46ff-be77-b347dbe3a372" name="Default" comment="" />
+      <created>1460527026595</created>
       <option name="number" value="Default" />
-      <updated>1446272389559</updated>
+      <updated>1460527026595</updated>
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <created>1446276483196</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1446276483196</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init fresco">
-      <created>1446276909241</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1446276909241</updated>
-    </task>
-    <task id="LOCAL-00003" summary="init">
-      <created>1446279914784</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1446279914784</updated>
-    </task>
-    <task id="LOCAL-00004" summary="init">
-      <created>1446281520586</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1446281520586</updated>
-    </task>
-    <task id="LOCAL-00005" summary="init">
-      <created>1446281526363</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1446281526363</updated>
-    </task>
-    <task id="LOCAL-00006" summary="init addNoteActivity">
-      <created>1446359854836</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1446359854836</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fix ignore">
-      <created>1446360001998</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1446360001998</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix">
-      <created>1446360009082</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1446360009082</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix">
-      <created>1446360802414</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1446360802414</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix">
-      <created>1446360818226</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1446360818226</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ignore workspace">
-      <created>1446362018327</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1446362018327</updated>
-    </task>
-    <task id="LOCAL-00012" summary="update">
-      <created>1448783316473</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1448783316473</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add multiPhoto">
-      <created>1448803426658</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803426658</updated>
-    </task>
-    <task id="LOCAL-00014" summary="add multiPhoto">
-      <created>1448803449073</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803449073</updated>
-    </task>
-    <task id="LOCAL-00015" summary="update">
-      <created>1448803804264</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803804265</updated>
-    </task>
-    <task id="LOCAL-00016" summary="update">
-      <created>1448803867962</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803867962</updated>
-    </task>
-    <task id="LOCAL-00017" summary="update">
-      <created>1448803976075</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803976075</updated>
-    </task>
-    <task id="LOCAL-00018" summary="update">
-      <created>1448803981204</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1448803981204</updated>
-    </task>
-    <task id="LOCAL-00019" summary="update">
-      <created>1449068158855</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1449068158855</updated>
-    </task>
-    <task id="LOCAL-00020" summary="update">
-      <created>1449068194239</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1449068194239</updated>
-    </task>
-    <task id="LOCAL-00021" summary="update">
-      <created>1449068199182</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1449068199182</updated>
-    </task>
-    <task id="LOCAL-00022" summary="update">
-      <created>1449068266874</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1449068266874</updated>
-    </task>
-    <task id="LOCAL-00023" summary="update">
-      <created>1449142770674</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1449142770674</updated>
-    </task>
-    <task id="LOCAL-00024" summary="update">
-      <created>1449142776263</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1449142776263</updated>
-    </task>
-    <task id="LOCAL-00025" summary="update">
-      <created>1451712645224</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1451712645224</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix">
-      <created>1451821870989</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1451821870989</updated>
-    </task>
-    <task id="LOCAL-00027" summary="update">
-      <created>1451915674732</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1451915674732</updated>
-    </task>
-    <task id="LOCAL-00028" summary="update">
-      <created>1451915836924</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1451915836924</updated>
-    </task>
-    <task id="LOCAL-00029" summary="add iflytek">
-      <created>1451998543225</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1451998543225</updated>
-    </task>
-    <task id="LOCAL-00030" summary="fix">
-      <created>1452319015708</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1452319015708</updated>
-    </task>
-    <task id="LOCAL-00031" summary="add about">
-      <created>1452324596708</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1452324596708</updated>
-    </task>
-    <task id="LOCAL-00032" summary="add recyclerType">
-      <created>1452330294414</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1452330294414</updated>
-    </task>
-    <task id="LOCAL-00033" summary="update">
-      <created>1452330709787</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1452330709787</updated>
-    </task>
-    <task id="LOCAL-00034" summary="update">
-      <created>1452332210910</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1452332210910</updated>
-    </task>
-    <task id="LOCAL-00035" summary="add apk">
-      <created>1452334794919</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1452334794919</updated>
-    </task>
-    <task id="LOCAL-00036" summary="release">
-      <created>1453520397419</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1453520397419</updated>
-    </task>
-    <task id="LOCAL-00037" summary="UPDATE">
-      <created>1458039188199</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1458039188199</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix bug">
-      <created>1458042200430</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1458042200430</updated>
-    </task>
-    <task id="LOCAL-00039" summary="change icon">
-      <created>1458043023123</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1458043023124</updated>
-    </task>
-    <task id="LOCAL-00040" summary="add permission">
-      <created>1458044324584</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1458044324584</updated>
-    </task>
-    <task id="LOCAL-00041" summary="update gradle2.0">
-      <created>1460196523306</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1460196523306</updated>
-    </task>
-    <task id="LOCAL-00042" summary="fix listener">
-      <created>1460339721537</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1460339721537</updated>
-    </task>
-    <option name="localTasksCounter" value="43" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30044842" sideWeight="0.47430408" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17023554" sideWeight="0.60504204" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28475335" sideWeight="0.47216275" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25214133" sideWeight="0.7067138" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35650223" sideWeight="0.5540685" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35650223" sideWeight="0.44593146" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33258426" sideWeight="0.44860813" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32286996" sideWeight="0.4598501" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49358973" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3632287" sideWeight="0.5894004" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3632287" sideWeight="0.41059956" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26203808" sideWeight="0.42237687" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.43468952" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251121" sideWeight="0.47912204" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26651737" sideWeight="0.5380086" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3661814" sideWeight="0.5770878" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17023554" sideWeight="0.394958" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Android WiFi ADB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25214133" sideWeight="0.2932862" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android WiFi ADB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17023554" sideWeight="0.59865093" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3717805" sideWeight="0.4748394" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21734476" sideWeight="0.68421054" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37737963" sideWeight="0.42130622" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4242,442 +3740,77 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="866" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2414347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2955032" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30235162" sideWeight="0.47537473" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32586786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="init fresco" />
-    <MESSAGE value="init" />
-    <MESSAGE value="init addNoteActivity" />
-    <MESSAGE value="fix ignore" />
-    <MESSAGE value="ignore workspace" />
-    <MESSAGE value="add MultiPhotoPick AND Config Fresco" />
-    <MESSAGE value="add multiPhoto" />
-    <MESSAGE value="Merge branch 'develop'&#10;&#10;Conflicts:&#10;&#9;.idea/gradle.xml&#10;&#9;.idea/modules.xml&#10;&#9;.idea/workspace.xml&#10;&#9;app/app.iml&#10;&#9;settings.gradle&#10;" />
-    <MESSAGE value="add iflytek" />
-    <MESSAGE value="fix" />
-    <MESSAGE value="add about" />
-    <MESSAGE value="add recyclerType" />
-    <MESSAGE value="update" />
-    <MESSAGE value="add apk" />
-    <MESSAGE value="release" />
-    <MESSAGE value="UPDATE" />
-    <MESSAGE value="fix bug" />
-    <MESSAGE value="change icon" />
-    <MESSAGE value="add permission" />
-    <MESSAGE value="update gradle2.0" />
-    <MESSAGE value="fix listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix listener" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/iflytek/waiting.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/iflytek/warning.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://D:/Android/platforms/android-23/data/res/drawable-hdpi/ic_menu_send.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/db/UserRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Android/sources/android-23/android/content/Intent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3320965">
-          <caret line="880" column="25" selection-start-line="880" selection-start-column="25" selection-end-line="880" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.litepal.android/core/1.3.0/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1660079">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35315314">
-          <caret line="336" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22936893">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/SharedPreferUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/otto/PagerPositionOtto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/otto/ListTypeOtto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14668219">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3911525">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/adapter/NotesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/ViewPagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1245635">
-          <caret line="68" column="116" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_note.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.6">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_notes.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29108912">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/cn/libery/siyunote/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12450593">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Android/extras/android/m2repository/com/android/support/design/23.1.1/design-23.1.1-sources.jar!/android/support/design/widget/Snackbar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="206" column="50" selection-start-line="206" selection-start-column="46" selection-end-line="206" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v23/values-v23.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.075675674">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/select_note_type.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43584907">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/utils/AppUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Android/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.1/recyclerview-v7-23.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329453">
-          <caret line="2624" column="16" selection-start-line="2624" selection-start-column="16" selection-end-line="2624" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79004854">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AllNoteFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4916512">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="75" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.1958042">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5296343">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7916667">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/db/EventRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.116883114">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7532468">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.5104895">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0023282887">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="105" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Android/sources/android-23/android/content/pm/PackageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="255" column="28" selection-start-line="255" selection-start-column="28" selection-end-line="255" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="66" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/ad53343e57ae0969aaf451a19eef381abe2ad3a1/butterknife-7.0.1-sources.jar!/butterknife/ButterKnife.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="235" column="21" selection-start-line="235" selection-start-column="21" selection-end-line="235" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/widget/MultiPhotoPickView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1958042">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AboutActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53496504">
-          <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/WorkNoteFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6853147">
-          <caret line="125" column="111" selection-start-line="125" selection-start-column="111" selection-end-line="125" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/NoteDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43706295">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/LifeNoteFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="69" column="46" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17132868">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/keys">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/grammar_sample.abnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/userwords">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/call.bnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Msc.jar!/com/iflytek/cloud/RecognizerResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.041666668">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Android/sources/android-23/android/widget/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9666048">
-          <caret line="4170" column="7" selection-start-line="4170" selection-start-column="7" selection-end-line="4170" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AddNoteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7237762">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5872#5873#0" expanded="true" />
-            <element signature="e#5924#5925#0" expanded="true" />
-            <element signature="e#6017#6018#0" expanded="true" />
-            <element signature="e#6081#6082#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/AllNoteFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17132868">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Android/sources/android-23/android/os/Process.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="763" column="28" selection-start-line="763" selection-start-column="28" selection-end-line="763" selection-end-column="28" />
-          <folding>
-            <element signature="e#26662#26663#0" expanded="true" />
-            <element signature="e#26696#26697#0" expanded="true" />
-          </folding>
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/libery/siyunote/ui/BaseActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63286716">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.6235955">
+          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
