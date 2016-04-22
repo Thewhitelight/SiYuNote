@@ -374,7 +374,6 @@ public class AddNoteActivity extends BaseActivity {
         } else {
             super.onBackPressed();
         }
-
     }
 
     private void updateRecord() {
