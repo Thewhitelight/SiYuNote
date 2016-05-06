@@ -10,17 +10,35 @@ import java.util.List;
  */
 public class EventRecord extends DataSupport {
 
-    private String time;
+    private String time;//事件创建时间
 
-    private long timeStamp;
+    private long timeStamp;//事件最后一次更改时间
 
-    private String content;
+    private String content;//文字
 
-    private String pictures;
+    private String pictures;//图片地址分号分割
 
-    private String voicePath;
+    private int type;//事件类型
 
-    private int type;
+    public static List<EventRecord> getAllNotes() {
+        return DataSupport.select("*").order("time desc").where("type = 0").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getWorkNotes() {
+        return DataSupport.select("*").order("time desc").where("type = 1").find(EventRecord.class);
+    }
+
+    public static List<EventRecord> getLifeNotes() {
+        return DataSupport.select("*").order("time desc").where("type = 2").find(EventRecord.class);
+    }
+
+    public static EventRecord getByTimeStamp(long timeStamp) {
+        return DataSupport.select("*").where("timeStamp = ?", timeStamp + "").find(EventRecord.class).get(0);
+    }
+
+    public static void deleteBy(long timeStamp) {
+        DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
+    }
 
     public String getTime() {
         return time;
@@ -46,14 +64,6 @@ public class EventRecord extends DataSupport {
         this.pictures = pictures;
     }
 
-    public String getVoicePath() {
-        return voicePath;
-    }
-
-    public void setVoicePath(String voicePath) {
-        this.voicePath = voicePath;
-    }
-
     public long getTimeStamp() {
         return timeStamp;
     }
@@ -70,24 +80,6 @@ public class EventRecord extends DataSupport {
         this.type = type;
     }
 
-    public static List<EventRecord> getAllNotes() {
-        return DataSupport.select("*").order("time desc").where("type = 0").find(EventRecord.class);
-    }
 
-    public static List<EventRecord> getWorkNotes() {
-        return DataSupport.select("*").order("time desc").where("type = 1").find(EventRecord.class);
-    }
-
-    public static List<EventRecord> getLifeNotes() {
-        return DataSupport.select("*").order("time desc").where("type = 2").find(EventRecord.class);
-    }
-
-    public static EventRecord getByTimeStamp(long timeStamp) {
-        return DataSupport.select("*").where("timeStamp = ?", timeStamp + "").find(EventRecord.class).get(0);
-    }
-
-    public static void deleteBy(long timeStamp) {
-        DataSupport.deleteAll(EventRecord.class, "timeStamp = ? ", timeStamp + "");
-    }
 
 }

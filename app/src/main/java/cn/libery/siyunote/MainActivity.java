@@ -1,14 +1,17 @@
 package cn.libery.siyunote;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -33,7 +36,9 @@ import cn.libery.siyunote.ui.LifeNoteFragment;
 import cn.libery.siyunote.ui.WorkNoteFragment;
 import cn.libery.siyunote.utils.AppUtils;
 import cn.libery.siyunote.utils.SharedPreferUtil;
+import cn.libery.siyunote.utils.ToastUtil;
 
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static butterknife.ButterKnife.bind;
 
 public class MainActivity extends AppCompatActivity
@@ -79,6 +84,21 @@ public class MainActivity extends AppCompatActivity
             viewpager.setCurrentItem(position, false);
         }
         navView.setNavigationItemSelectedListener(this);
+        if (ContextCompat.checkSelfPermission(this, WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE}, 1);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(final int requestCode, final String[] permissions, final int[]
+            grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                ToastUtil.showAtUI("请在APP设置页面打开相应权限");
+            }
+        }
+
     }
 
     @Override
@@ -103,13 +123,6 @@ public class MainActivity extends AppCompatActivity
             viewpager.setCurrentItem(otto.getPosition(), false);
         }
     }
-
-  /*  @OnClick(R.id.fab)
-    void addNote() {
-       Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-        startActivity(new Intent(this, AddNoteActivity.class));
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,9 +155,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_manage) {
-            Uri uri = Uri.parse("mailto:921618920@qq.com");
+            Uri uri = Uri.parse("mailto:442350442@qq.com");
             Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-            intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name) + BuildConfig.VERSION_NAME + getString(R.string.feedback));
+            intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name) + BuildConfig
+                    .VERSION_NAME + getString(R.string.feedback));
             startActivity(intent);
         } else if (id == R.id.nav_about) {
             startActivity(new Intent(this, AboutActivity.class));
@@ -160,7 +174,8 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text, getString(R.string.app_down_url), BuildConfig.APP_DOWNLOAD_URL));
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text, getString(R.string.app_down_url),
+                BuildConfig.APP_DOWNLOAD_URL));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(Intent.createChooser(intent, getString(R.string.share)));
     }

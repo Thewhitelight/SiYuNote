@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.squareup.otto.Subscribe;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -169,6 +171,13 @@ public class NoteDetailActivity extends BaseActivity {
                     .show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Subscribe
+    public void refreshRecord(RefreshOtto otto) {
+        if (otto != null && otto.ismRefresh()) {
+            iniData();
+        }
     }
 
 }

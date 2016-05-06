@@ -3,6 +3,6 @@
 *.iml
 /local.properties
 .DS_Store
-/build
 /captures
 **/build
+.app/key.jks

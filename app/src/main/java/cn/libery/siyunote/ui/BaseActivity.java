@@ -1,5 +1,7 @@
 package cn.libery.siyunote.ui;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -12,6 +14,27 @@ import cn.libery.siyunote.R;
  */
 public class BaseActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
+    }
+
+    class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+        @Override
+        public void uncaughtException(Thread thread, Throwable ex) {
+            ex.printStackTrace();
+            android.os.Process.killProcess(android.os.Process.myPid());
+           finish();
+        }
+    }
+
+
+    public void setTitle(int title) {
+        setTitle(getString(title));
+    }
+
     public void setTitle(String title) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
@@ -23,12 +46,6 @@ public class BaseActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-    }
-
-    public void setTitle(int title) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(title);
-        setActionBar(toolbar);
     }
 
     public void onToolbarBackPressed() {

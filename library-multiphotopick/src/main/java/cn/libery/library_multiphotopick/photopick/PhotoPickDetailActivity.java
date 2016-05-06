@@ -125,8 +125,8 @@ public class PhotoPickDetailActivity extends AppCompatActivity {
             mCursor.close();
             mCursor = null;
         }
-
         super.onDestroy();
+
     }
 
     private void updateDisplay(int pos) {
@@ -240,9 +240,10 @@ public class PhotoPickDetailActivity extends AppCompatActivity {
     int getImageCount() {
         if (mAllPhotos != null) {
             return mAllPhotos.size();
-        } else {
+        } else if (mCursor != null) {
             return mCursor.getCount();
         }
+        return 0;
     }
 
 }
